@@ -1,12 +1,12 @@
-#ifndef OV2640_REGS_H
-#define OV2640_REGS_H
+#ifndef REGS_H
+#define REGS_H
 #include "ArduCAM.h"
 //#include <avr/pgmspace.h>
 
-#define OV2640_CHIPID_HIGH 	0x0A
-#define OV2640_CHIPID_LOW 	0x0B
+#define CHIPID_HIGH 	0x0A
+#define CHIPID_LOW 	0x0B
 
-const struct sensor_reg OV2640_QVGA[] PROGMEM =
+const struct sensor_reg QVGA[] PROGMEM =
 {
 	{0xff, 0x0}, 
 	{0x2c, 0xff}, 
@@ -213,7 +213,7 @@ const struct sensor_reg OV2640_QVGA[] PROGMEM =
 	{0xff,0xff},
 };        
 
-const struct sensor_reg OV2640_JPEG_INIT[] PROGMEM =
+const struct sensor_reg JPEG_INIT[] PROGMEM =
 {
   { 0xff, 0x00 },
   { 0x2c, 0xff },
@@ -409,7 +409,7 @@ const struct sensor_reg OV2640_JPEG_INIT[] PROGMEM =
   { 0xff, 0xff },
 };             
 
-const struct sensor_reg OV2640_YUV422[] PROGMEM =
+const struct sensor_reg YUV422[] PROGMEM =
 {
   { 0xFF, 0x00 },
   { 0x05, 0x00 },
@@ -423,7 +423,7 @@ const struct sensor_reg OV2640_YUV422[] PROGMEM =
   { 0xff, 0xff },
 };
 
-const struct sensor_reg OV2640_JPEG[] PROGMEM =  
+const struct sensor_reg JPEG[] PROGMEM =  
 {
   { 0xe0, 0x14 },
   { 0xe1, 0x77 },
@@ -437,7 +437,7 @@ const struct sensor_reg OV2640_JPEG[] PROGMEM =
 }; 
 
 /* JPG 160x120 */
-const struct sensor_reg OV2640_160x120_JPEG[] PROGMEM =  
+const struct sensor_reg JPEG_160x120[] PROGMEM =  
 {
   { 0xff, 0x01 },
   { 0x12, 0x40 },
@@ -483,7 +483,7 @@ const struct sensor_reg OV2640_160x120_JPEG[] PROGMEM =
 
 /* JPG, 0x176x144 */
 
-const struct sensor_reg OV2640_176x144_JPEG[] PROGMEM =  
+const struct sensor_reg JPEG_176x144[] PROGMEM =  
 {
   { 0xff, 0x01 },
   { 0x12, 0x40 },
@@ -529,7 +529,7 @@ const struct sensor_reg OV2640_176x144_JPEG[] PROGMEM =
 
 /* JPG 320x240 */
 
-const struct sensor_reg OV2640_320x240_JPEG[] PROGMEM =  
+const struct sensor_reg JPEG_320x240[] PROGMEM =  
 {
   { 0xff, 0x01 },
   { 0x12, 0x40 },
@@ -575,7 +575,7 @@ const struct sensor_reg OV2640_320x240_JPEG[] PROGMEM =
 
 /* JPG 352x288 */
 
-const struct sensor_reg OV2640_352x288_JPEG[] PROGMEM =  
+const struct sensor_reg JPEG_352x288[] PROGMEM =  
 
 {
   { 0xff, 0x01 },
@@ -621,11 +621,11 @@ const struct sensor_reg OV2640_352x288_JPEG[] PROGMEM =
 };
 
 /* JPG 640x480 */
-const struct sensor_reg OV2640_640x480_JPEG[] PROGMEM =  
+const struct sensor_reg JPEG_640x480[] PROGMEM =  
 {
 	{0xff, 0x01},
 	{0x11, 0x01},
-	{0x12, 0x00}, // Bit[6:4]: Resolution selection//0x02Îª²ÊÌõ
+	{0x12, 0x00}, // Bit[6:4]: Resolution selection//0x02Îªï¿½ï¿½ï¿½ï¿½
 	{0x17, 0x11}, // HREFST[10:3]
 	{0x18, 0x75}, // HREFEND[10:3]
 	{0x32, 0x36}, // Bit[5:3]: HREFEND[2:0]; Bit[2:0]: HREFST[2:0]
@@ -669,11 +669,11 @@ const struct sensor_reg OV2640_640x480_JPEG[] PROGMEM =
 };     
     
 /* JPG 800x600 */
-const struct sensor_reg OV2640_800x600_JPEG[] PROGMEM =  
+const struct sensor_reg JPEG_800x600[] PROGMEM =  
 {
 	{0xff, 0x01},
 	{0x11, 0x01},
-	{0x12, 0x00}, // Bit[6:4]: Resolution selection//0x02Îª²ÊÌõ
+	{0x12, 0x00}, // Bit[6:4]: Resolution selection//0x02Îªï¿½ï¿½ï¿½ï¿½
 	{0x17, 0x11}, // HREFST[10:3]
 	{0x18, 0x75}, // HREFEND[10:3]
 	{0x32, 0x36}, // Bit[5:3]: HREFEND[2:0]; Bit[2:0]: HREFST[2:0]
@@ -717,11 +717,11 @@ const struct sensor_reg OV2640_800x600_JPEG[] PROGMEM =
 };     
        
 /* JPG 1024x768 */
-const struct sensor_reg OV2640_1024x768_JPEG[] PROGMEM =  
+const struct sensor_reg JPEG_1024x768[] PROGMEM =  
 {
 	{0xff, 0x01},
 	{0x11, 0x01},
-	{0x12, 0x00}, // Bit[6:4]: Resolution selection//0x02Îª²ÊÌõ
+	{0x12, 0x00}, // Bit[6:4]: Resolution selection//0x02Îªï¿½ï¿½ï¿½ï¿½
 	{0x17, 0x11}, // HREFST[10:3]
 	{0x18, 0x75}, // HREFEND[10:3]
 	{0x32, 0x36}, // Bit[5:3]: HREFEND[2:0]; Bit[2:0]: HREFST[2:0]
@@ -764,11 +764,11 @@ const struct sensor_reg OV2640_1024x768_JPEG[] PROGMEM =
 };  
 
    /* JPG 1280x1024 */
-const struct sensor_reg OV2640_1280x1024_JPEG[] PROGMEM =  
+const struct sensor_reg JPEG_1280x1024[] PROGMEM =  
 {
 	{0xff, 0x01},
 	{0x11, 0x01},
-	{0x12, 0x00}, // Bit[6:4]: Resolution selection//0x02Îª²ÊÌõ
+	{0x12, 0x00}, // Bit[6:4]: Resolution selection//0x02Îªï¿½ï¿½ï¿½ï¿½
 	{0x17, 0x11}, // HREFST[10:3]
 	{0x18, 0x75}, // HREFEND[10:3]
 	{0x32, 0x36}, // Bit[5:3]: HREFEND[2:0]; Bit[2:0]: HREFST[2:0]
@@ -812,11 +812,11 @@ const struct sensor_reg OV2640_1280x1024_JPEG[] PROGMEM =
 };         
        
    /* JPG 1600x1200 */
-const struct sensor_reg OV2640_1600x1200_JPEG[] PROGMEM =  
+const struct sensor_reg JPEG_1600x1200[] PROGMEM =  
 {
 	{0xff, 0x01},
 	{0x11, 0x01},
-	{0x12, 0x00}, // Bit[6:4]: Resolution selection//0x02Îª²ÊÌõ
+	{0x12, 0x00}, // Bit[6:4]: Resolution selection//0x02Îªï¿½ï¿½ï¿½ï¿½
 	{0x17, 0x11}, // HREFST[10:3]
 	{0x18, 0x75}, // HREFEND[10:3]
 	{0x32, 0x36}, // Bit[5:3]: HREFEND[2:0]; Bit[2:0]: HREFST[2:0]
@@ -863,7 +863,7 @@ const struct sensor_reg OV2640_1600x1200_JPEG[] PROGMEM =
 
 
 
-const struct sensor_reg OV2640_SVGA[]
+const struct sensor_reg SVGA[]
 {
 	{0xff, 0x01},
 {0x12, 0x80},
@@ -1044,7 +1044,7 @@ const struct sensor_reg OV2640_SVGA[]
 {0x05, 0x00},
 {0xff, 0xff},
 };
-const struct sensor_reg OV2640_640x480_JPEG2[] =
+const struct sensor_reg JPEG2_640x480[] =
 {
 	{0xff,0x01},		//001
 	{0x11,0x01},		//002
