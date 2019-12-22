@@ -1,7 +1,13 @@
+#ifndef CAMERA_H
+#define CAMERA_H
 #include "Arduino.h"
 #include <Wire.h>
 #include <SPI.h>
 #include "HardwareSerial.h"
+#include "base_regs.h"
+#include "base_defs.h"
+
+#define SPI_CS L07
 
 enum JPEG_Size
 {
@@ -14,7 +20,7 @@ enum JPEG_Size
     p1024x768,
     p1280x1024,
     p1600x1200,
-}
+};
 
 enum Color_Saturation
 {
@@ -27,7 +33,7 @@ enum Color_Saturation
     Saturation_2,
     Saturation_3,
     Saturation_4,
-}
+};
 
 enum Brightness
 {
@@ -40,7 +46,7 @@ enum Brightness
     Brightness_2,
     Brightness_3,
     Brightness_4,
-}
+};
 
 enum Contrast
 {
@@ -53,7 +59,7 @@ enum Contrast
     Contrast_2,
     Contrast_3,
     Contrast_4,
-}
+};
 
 enum Angle
 {
@@ -69,7 +75,7 @@ enum Angle
     degree90,
     degree120,
     degree150,
-}
+};
 
 enum Special_Effects
 {
@@ -86,37 +92,14 @@ enum Special_Effects
     Solarize,
     Blueish,
     Yellowish,
-}
+};
 
 enum Format
 {
-    BMP,
-    JPEG,
-    RAW,
-}
-
-enum CameraModel
-{
-    OV7670,
-    MT9D111_A,
-    OV7675,
-    OV5642,
-    OV3640,
-    OV2640,
-    OV9655,
-    MT9M112,
-    OV7725,
-    OV7660,
-    MT9M001,
-    OV5640,
-    MT9D111_B,
-    OV9650,
-    MT9V111,
-    MT9T112,
-    MT9D112,
-    MT9V034,
-    MT9M034,
-}
+    BMP_FMT,
+    JPEG_FMT,
+    RAW_FMT,
+};
 
 enum Light_Mode
 {
@@ -125,13 +108,13 @@ enum Light_Mode
     Cloudy,
     Office,
     Home,
-}
+};
 
 class Camera
 {
 public:
-    Camera(); // Constructor.
-
+    Camera() {}
+    ~Camera() {};
     virtual void InitCAM();
     virtual void SetJPEGsize(JPEG_Size size);
     virtual void SetLightMode(Light_Mode LightMode);
@@ -139,6 +122,7 @@ public:
     virtual void SetBrightness(Brightness Brightness);
     virtual void SetContrast(Contrast Contrast);
     virtual void SetSpecialEffects(Special_Effects Specialeffect);
+    virtual bool checkModule();
 
     void flush_fifo();
     void start_capture();
@@ -190,9 +174,25 @@ public:
     void SetFormat(Format fmt)
     {
         m_fmt = fmt;
-    }
+    };
+
+    void resetCPLD()
+    {
+        //Reset the CPLD
+        write_reg(0x07, 0x80);
+        delay(100);
+        write_reg(0x07, 0x00);
+    };
+
+    bool checkSPIBusStatus()
+    {
+        write_reg(ARDUCHIP_TEST1, 0x55);
+        byte temp = read_reg(ARDUCHIP_TEST1);
+        return temp == 0x55;
+    };
 
 protected:
-    uint8t m_fmt;
-    uint8t sensor_addr;
+    Format m_fmt;
+    uint8_t sensor_addr;
 };
+#endif

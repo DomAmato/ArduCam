@@ -1,18 +1,18 @@
+#include "OV2640_MINI_2MP.h"
 #include "Arduino.h"
 #include "ov2640_regs.h"
-#include "OV2640.h"
 
-OV2640::OV2640()
+OV2640_MINI_2MP::OV2640_MINI_2MP()
 {
     sensor_addr = 0x60;
 }
 
-void OV2640::InitCAM()
+void OV2640_MINI_2MP::InitCAM()
 {
     wrSensorReg8_8(0xff, 0x01);
     wrSensorReg8_8(0x12, 0x80);
     delay(100);
-    if (m_fmt == JPEG)
+    if (m_fmt == JPEG_FMT)
     {
         wrSensorRegs8_8(JPEG_INIT);
         wrSensorRegs8_8(YUV422);
@@ -29,7 +29,7 @@ void OV2640::InitCAM()
     }
 }
 
-void OV2640::SetJPEGsize(JPEG_Size size)
+void OV2640_MINI_2MP::SetJPEGsize(JPEG_Size size)
 {
     switch (size)
     {
@@ -66,7 +66,7 @@ void OV2640::SetJPEGsize(JPEG_Size size)
     }
 }
 
-void OV2640::SetLightMode(Light_Mode mode)
+void OV2640_MINI_2MP::SetLightMode(Light_Mode mode)
 {
     switch (mode)
     {
@@ -110,7 +110,7 @@ void OV2640::SetLightMode(Light_Mode mode)
     }
 }
 
-void OV2640::SetColorSaturation(Color_Saturation saturation)
+void OV2640_MINI_2MP::SetColorSaturation(Color_Saturation saturation)
 {
     switch (saturation)
     {
@@ -158,7 +158,7 @@ void OV2640::SetColorSaturation(Color_Saturation saturation)
     }
 }
 
-void OV2640::SetBrightness(Brightness brightness)
+void OV2640_MINI_2MP::SetBrightness(Brightness brightness)
 {
     switch (brightness)
     {
@@ -205,7 +205,7 @@ void OV2640::SetBrightness(Brightness brightness)
     }
 }
 
-void OV2640::SetContrast(Contrast contrast)
+void OV2640_MINI_2MP::SetContrast(Contrast contrast)
 {
     switch (contrast)
     {
@@ -263,12 +263,11 @@ void OV2640::SetContrast(Contrast contrast)
     }
 }
 
-void OV2640::SetSpecialEffects(Special_Effects effect)
+void OV2640_MINI_2MP::SetSpecialEffects(Special_Effects effect)
 {
     switch (effect)
     {
     case Antique:
-
         wrSensorReg8_8(0xff, 0x00);
         wrSensorReg8_8(0x7c, 0x00);
         wrSensorReg8_8(0x7d, 0x18);
@@ -323,17 +322,23 @@ void OV2640::SetSpecialEffects(Special_Effects effect)
         wrSensorReg8_8(0x7c, 0x05);
         wrSensorReg8_8(0x7d, 0x80);
         wrSensorReg8_8(0x7d, 0x80);
-
         break;
     case Normal:
-
         wrSensorReg8_8(0xff, 0x00);
         wrSensorReg8_8(0x7c, 0x00);
         wrSensorReg8_8(0x7d, 0x00);
         wrSensorReg8_8(0x7c, 0x05);
         wrSensorReg8_8(0x7d, 0x80);
         wrSensorReg8_8(0x7d, 0x80);
-
         break;
     }
+}
+
+bool OV2640_MINI_2MP::checkModule()
+{
+    uint8_t vid, pid;
+    wrSensorReg8_8(0xff, 0x01);
+    rdSensorReg8_8(OV2640_CHIPID_HIGH, &vid);
+    rdSensorReg8_8(OV2640_CHIPID_LOW, &pid);
+    return ((vid != 0x26) && ((pid != 0x41) || (pid != 0x42)));
 }
