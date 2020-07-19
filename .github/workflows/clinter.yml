@@ -8,10 +8,11 @@ on:
 
 jobs:
   linter:
-    name: clang-tidy
+    name: cppcheck
     runs-on: ubuntu-latest
     steps:
-      - name: clang-tidy check
-        uses: smay1613/clang-tidy-action@master
-    env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - uses: actions/checkout@v2
+      - name: cppcheck
+        uses: deep5050/cppcheck-action@master
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN}}
