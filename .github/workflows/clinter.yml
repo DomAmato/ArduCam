@@ -8,10 +8,10 @@ on:
 
 jobs:
   linter:
-    name: c-linter
+    name: clang-tidy
     runs-on: ubuntu-latest
     steps:
-      - name: c-linter
-        uses: ArtificialAmateur/clang-tidy-action@master
+      - name: clang-tidy check
+        uses: smay1613/clang-tidy-action@master
     env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
