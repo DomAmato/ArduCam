@@ -202,9 +202,13 @@ enum TestPattern
 class Camera
 {
 public:
-    Camera() {}
+    Camera() {
+        m_fmt = JPEG_FMT;
+        sensor_addr = 0x00;
+    }
     ~Camera(){};
-    virtual void InitCAM();
+    virtual void InitCAM() = 0;
+    virtual bool checkModule() =0;
     virtual void SetImageSize(Image_Size size);
     virtual void SetLightMode(Light_Mode mode);
     virtual void SetColorSaturation(Saturation saturation);
@@ -220,7 +224,6 @@ public:
     virtual void SetMirrorFlip(MirrorFlip style);
     virtual void SetCompression(Compression level);
     virtual void SetTestPattern(TestPattern pattern);
-    virtual bool checkModule();
 
     void flush_fifo();
     void start_capture();

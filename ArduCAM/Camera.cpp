@@ -136,7 +136,7 @@ int Camera::wrSensorRegs8_8(const struct sensor_reg reglist[])
 int Camera::wrSensorRegs8_16(const struct sensor_reg reglist[])
 {
 	int err = 0;
-	unsigned int reg_addr, reg_val;
+	unsigned int reg_addr, reg_val = 0;
 	const struct sensor_reg *next = reglist;
 
 	while ((reg_addr != 0xff) | (reg_val != 0xffff))
@@ -155,8 +155,8 @@ int Camera::wrSensorRegs8_16(const struct sensor_reg reglist[])
 int Camera::wrSensorRegs16_8(const struct sensor_reg reglist[])
 {
 	int err = 0;
-	unsigned int reg_addr;
-	unsigned char reg_val;
+	unsigned int reg_addr = 0;
+	unsigned char reg_val = 0;
 	const struct sensor_reg *next = reglist;
 
 	while ((reg_addr != 0xffff) | (reg_val != 0xff))
