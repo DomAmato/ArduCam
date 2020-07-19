@@ -26,10 +26,10 @@ clear_fifo_flag	KEYWORD2
 read_fifo	KEYWORD2
 read_reg	KEYWORD2
 write_reg	KEYWORD2
-OV2640_set_JPEG_size	KEYWORD2
-OV3640_set_JPEG_size	KEYWORD2
-OV5640_set_JPEG_size	KEYWORD2
-OV5642_set_JPEG_size	KEYWORD2
+OV2640_set_Image_Size	KEYWORD2
+OV3640_set_Image_Size	KEYWORD2
+OV5640_set_Image_Size	KEYWORD2
+OV5642_set_Image_Size	KEYWORD2
 OV5642_set_RAW_size	KEYWORD2
 read_fifo_burst	KEYWORD2
 set_format	KEYWORD2 
@@ -57,10 +57,10 @@ OV3640_set_Brightness	KEYWORD2
 OV5642_set_Brightness	KEYWORD2
 OV5640_set_Brightness	KEYWORD2
 
-OV2640_set_Color_Saturation	KEYWORD2
-OV3640_set_Color_Saturation	KEYWORD2
-OV5642_set_Color_Saturation	KEYWORD2
-OV5640_set_Color_Saturation	KEYWORD2 
+OV2640_set_Saturation	KEYWORD2
+OV3640_set_Saturation	KEYWORD2
+OV5642_set_Saturation	KEYWORD2
+OV5640_set_Saturation	KEYWORD2 
 
 
 OV2640_set_Contrast	KEYWORD2
@@ -194,51 +194,51 @@ Manual_A	LITERAL1
 Manual_cwf	LITERAL1    
 Manual_cloudy	LITERAL1
 
-Saturation4	LITERAL1  
-Saturation3	LITERAL1  
-Saturation2	LITERAL1  
-Saturation1	LITERAL1  
-Saturation0	LITERAL1  
-Saturation_1	LITERAL1 
-Saturation_2	LITERAL1 
-Saturation_3	LITERAL1 
-Saturation_4	LITERAL1 
+Plus_4	LITERAL1  
+Plus_3	LITERAL1  
+Plus_2	LITERAL1  
+Plus_1	LITERAL1  
+Plus_0	LITERAL1  
+Minus_1	LITERAL1 
+Minus_2	LITERAL1 
+Minus_3	LITERAL1 
+Minus_4	LITERAL1 
 
-Brightness4	LITERAL1 
-Brightness3	LITERAL1 
-Brightness2	LITERAL1 
-Brightness1	LITERAL1 
-Brightness0	LITERAL1 
-Brightness_1	LITERAL1
-Brightness_2	LITERAL1
-Brightness_3	LITERAL1
-Brightness_4	LITERAL1
+Plus_4	LITERAL1 
+Plus_3	LITERAL1 
+Plus_2	LITERAL1 
+Plus_1	LITERAL1 
+Plus_0	LITERAL1 
+Minus_1	LITERAL1
+Minus_2	LITERAL1
+Minus_3	LITERAL1
+Minus_4	LITERAL1
 
 
-Contrast4	LITERAL1 
-Contrast3	LITERAL1 
-Contrast2	LITERAL1 
-Contrast1	LITERAL1 
-Contrast0	LITERAL1 
-Contrast_1	LITERAL1
-Contrast_2	LITERAL1
-Contrast_3	LITERAL1
-Contrast_4	LITERAL1
+Plus_4	LITERAL1 
+Plus_3	LITERAL1 
+Plus_2	LITERAL1 
+Plus_1	LITERAL1 
+Plus_0	LITERAL1 
+Minus_1	LITERAL1
+Minus_2	LITERAL1
+Minus_3	LITERAL1
+Minus_4	LITERAL1
           
           
           
-degree_180	LITERAL1
-degree_150	LITERAL1
-degree_120	LITERAL1
-degree_90	LITERAL1 
-degree_60	LITERAL1 
-degree_30	LITERAL1 
-degree_0	LITERAL1  
-degree30	LITERAL1  
-degree60	LITERAL1  
-degree90	LITERAL1  
-degree120	LITERAL1 
-degree150	LITERAL1 
+Minus_180	LITERAL1
+Minus_150	LITERAL1
+Minus_120	LITERAL1
+Minus_90	LITERAL1 
+Minus_60	LITERAL1 
+Minus_30	LITERAL1 
+Minus_0	LITERAL1  
+Plus_30	LITERAL1  
+Plus_60	LITERAL1  
+Plus_90	LITERAL1  
+Plus_120	LITERAL1 
+Plus_150	LITERAL1 
 
 
 Antique	LITERAL1                   
@@ -255,17 +255,17 @@ Solarize	LITERAL1
 Blueish	LITERAL1  
 Yellowish	LITERAL1                
                           
-Exposure_17_EV	LITERAL1            
-Exposure_13_EV	LITERAL1            
-Exposure_10_EV	LITERAL1            
-Exposure_07_EV	LITERAL1            
-Exposure_03_EV	LITERAL1            
+Minus_17	LITERAL1            
+Minus_13	LITERAL1            
+Minus_10	LITERAL1            
+Minus_07	LITERAL1            
+Minus_03	LITERAL1            
 Exposure_default	LITERAL1          
-Exposure03_EV	LITERAL1             
-Exposure07_EV	LITERAL1             
-Exposure10_EV	LITERAL1             
-Exposure13_EV	LITERAL1             
-Exposure17_EV	LITERAL1             
+Plus_03	LITERAL1             
+Plus_07	LITERAL1             
+Plus_10	LITERAL1             
+Plus_13	LITERAL1             
+Plus_17	LITERAL1             
                           
                           
 Auto_Sharpness_default	LITERAL1    
@@ -290,13 +290,13 @@ Sharpness_auto	LITERAL1
         
                           
                           
-EV3	LITERAL1                       
-EV2	LITERAL1                       
-EV1	LITERAL1                       
-EV0	LITERAL1                       
-EV_1	LITERAL1                      
-EV_2	LITERAL1                      
-EV_3	LITERAL1                      
+Plus_3	LITERAL1                       
+Plus_2	LITERAL1                       
+Plus_1	LITERAL1                       
+Plus_0	LITERAL1                       
+Minus_1	LITERAL1                      
+Minus_2	LITERAL1                      
+Minus_3	LITERAL1                      
                           
 MIRROR	LITERAL1                    
 FLIP	LITERAL1                      

@@ -29,35 +29,35 @@ void OV2640_MINI_2MP::InitCAM()
     }
 }
 
-void OV2640_MINI_2MP::SetJPEGsize(JPEG_Size size)
+void OV2640_MINI_2MP::SetImageSize(Image_Size size)
 {
     switch (size)
     {
-    case p160x120:
+    case j160x120:
         wrSensorRegs8_8(JPEG_160x120);
         break;
-    case p176x144:
+    case j176x144:
         wrSensorRegs8_8(JPEG_176x144);
         break;
-    case p320x240:
+    case j320x240:
         wrSensorRegs8_8(JPEG_320x240);
         break;
-    case p352x288:
+    case j352x288:
         wrSensorRegs8_8(JPEG_352x288);
         break;
-    case p640x480:
+    case j640x480:
         wrSensorRegs8_8(JPEG_640x480);
         break;
-    case p800x600:
+    case j800x600:
         wrSensorRegs8_8(JPEG_800x600);
         break;
-    case p1024x768:
+    case j1024x768:
         wrSensorRegs8_8(JPEG_1024x768);
         break;
-    case p1280x1024:
+    case j1280x1024:
         wrSensorRegs8_8(JPEG_1280x1024);
         break;
-    case p1600x1200:
+    case j1600x1200:
         wrSensorRegs8_8(JPEG_1600x1200);
         break;
     default:
@@ -110,11 +110,11 @@ void OV2640_MINI_2MP::SetLightMode(Light_Mode mode)
     }
 }
 
-void OV2640_MINI_2MP::SetColorSaturation(Color_Saturation saturation)
+void OV2640_MINI_2MP::SetColorSaturation(Saturation saturation)
 {
     switch (saturation)
     {
-    case Saturation2:
+    case Plus_2:
 
         wrSensorReg8_8(0xff, 0x00);
         wrSensorReg8_8(0x7c, 0x00);
@@ -123,7 +123,7 @@ void OV2640_MINI_2MP::SetColorSaturation(Color_Saturation saturation)
         wrSensorReg8_8(0x7d, 0x68);
         wrSensorReg8_8(0x7d, 0x68);
         break;
-    case Saturation1:
+    case Plus_1:
         wrSensorReg8_8(0xff, 0x00);
         wrSensorReg8_8(0x7c, 0x00);
         wrSensorReg8_8(0x7d, 0x02);
@@ -131,7 +131,7 @@ void OV2640_MINI_2MP::SetColorSaturation(Color_Saturation saturation)
         wrSensorReg8_8(0x7d, 0x58);
         wrSensorReg8_8(0x7d, 0x58);
         break;
-    case Saturation0:
+    case Plus_0:
         wrSensorReg8_8(0xff, 0x00);
         wrSensorReg8_8(0x7c, 0x00);
         wrSensorReg8_8(0x7d, 0x02);
@@ -139,7 +139,7 @@ void OV2640_MINI_2MP::SetColorSaturation(Color_Saturation saturation)
         wrSensorReg8_8(0x7d, 0x48);
         wrSensorReg8_8(0x7d, 0x48);
         break;
-    case Saturation_1:
+    case Minus_1:
         wrSensorReg8_8(0xff, 0x00);
         wrSensorReg8_8(0x7c, 0x00);
         wrSensorReg8_8(0x7d, 0x02);
@@ -147,7 +147,7 @@ void OV2640_MINI_2MP::SetColorSaturation(Color_Saturation saturation)
         wrSensorReg8_8(0x7d, 0x38);
         wrSensorReg8_8(0x7d, 0x38);
         break;
-    case Saturation_2:
+    case Minus_2:
         wrSensorReg8_8(0xff, 0x00);
         wrSensorReg8_8(0x7c, 0x00);
         wrSensorReg8_8(0x7d, 0x02);
@@ -162,7 +162,7 @@ void OV2640_MINI_2MP::SetBrightness(Brightness brightness)
 {
     switch (brightness)
     {
-    case Brightness2:
+    case Plus_2:
         wrSensorReg8_8(0xff, 0x00);
         wrSensorReg8_8(0x7c, 0x00);
         wrSensorReg8_8(0x7d, 0x04);
@@ -170,7 +170,7 @@ void OV2640_MINI_2MP::SetBrightness(Brightness brightness)
         wrSensorReg8_8(0x7d, 0x40);
         wrSensorReg8_8(0x7d, 0x00);
         break;
-    case Brightness1:
+    case Plus_1:
         wrSensorReg8_8(0xff, 0x00);
         wrSensorReg8_8(0x7c, 0x00);
         wrSensorReg8_8(0x7d, 0x04);
@@ -178,7 +178,7 @@ void OV2640_MINI_2MP::SetBrightness(Brightness brightness)
         wrSensorReg8_8(0x7d, 0x30);
         wrSensorReg8_8(0x7d, 0x00);
         break;
-    case Brightness0:
+    case Plus_0:
         wrSensorReg8_8(0xff, 0x00);
         wrSensorReg8_8(0x7c, 0x00);
         wrSensorReg8_8(0x7d, 0x04);
@@ -186,7 +186,7 @@ void OV2640_MINI_2MP::SetBrightness(Brightness brightness)
         wrSensorReg8_8(0x7d, 0x20);
         wrSensorReg8_8(0x7d, 0x00);
         break;
-    case Brightness_1:
+    case Minus_1:
         wrSensorReg8_8(0xff, 0x00);
         wrSensorReg8_8(0x7c, 0x00);
         wrSensorReg8_8(0x7d, 0x04);
@@ -194,7 +194,7 @@ void OV2640_MINI_2MP::SetBrightness(Brightness brightness)
         wrSensorReg8_8(0x7d, 0x10);
         wrSensorReg8_8(0x7d, 0x00);
         break;
-    case Brightness_2:
+    case Minus_2:
         wrSensorReg8_8(0xff, 0x00);
         wrSensorReg8_8(0x7c, 0x00);
         wrSensorReg8_8(0x7d, 0x04);
@@ -209,7 +209,7 @@ void OV2640_MINI_2MP::SetContrast(Contrast contrast)
 {
     switch (contrast)
     {
-    case Contrast2:
+    case Plus_2:
 
         wrSensorReg8_8(0xff, 0x00);
         wrSensorReg8_8(0x7c, 0x00);
@@ -220,7 +220,7 @@ void OV2640_MINI_2MP::SetContrast(Contrast contrast)
         wrSensorReg8_8(0x7d, 0x0c);
         wrSensorReg8_8(0x7d, 0x06);
         break;
-    case Contrast1:
+    case Plus_1:
         wrSensorReg8_8(0xff, 0x00);
         wrSensorReg8_8(0x7c, 0x00);
         wrSensorReg8_8(0x7d, 0x04);
@@ -230,7 +230,7 @@ void OV2640_MINI_2MP::SetContrast(Contrast contrast)
         wrSensorReg8_8(0x7d, 0x16);
         wrSensorReg8_8(0x7d, 0x06);
         break;
-    case Contrast0:
+    case Plus_0:
         wrSensorReg8_8(0xff, 0x00);
         wrSensorReg8_8(0x7c, 0x00);
         wrSensorReg8_8(0x7d, 0x04);
@@ -240,7 +240,7 @@ void OV2640_MINI_2MP::SetContrast(Contrast contrast)
         wrSensorReg8_8(0x7d, 0x20);
         wrSensorReg8_8(0x7d, 0x06);
         break;
-    case Contrast_1:
+    case Minus_1:
         wrSensorReg8_8(0xff, 0x00);
         wrSensorReg8_8(0x7c, 0x00);
         wrSensorReg8_8(0x7d, 0x04);
@@ -250,7 +250,7 @@ void OV2640_MINI_2MP::SetContrast(Contrast contrast)
         wrSensorReg8_8(0x7d, 0x2a);
         wrSensorReg8_8(0x7d, 0x06);
         break;
-    case Contrast_2:
+    case Minus_2:
         wrSensorReg8_8(0xff, 0x00);
         wrSensorReg8_8(0x7c, 0x00);
         wrSensorReg8_8(0x7d, 0x04);

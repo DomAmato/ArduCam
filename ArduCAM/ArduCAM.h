@@ -104,6 +104,8 @@
 #include "Camera.h"
 #include "base_defs.h"
 #include "OV2640_MINI_2MP.h"
+#include "OV5640_MINI_5MP.h"
+#include "OV5642_MINI_5MP.h"
 
 enum CameraModel
 {
@@ -111,6 +113,7 @@ enum CameraModel
 	MT9D111_A,
 	OV7675,
 	OV5642,
+	OV5640,
 	OV3640,
 	OV2640,
 	OV9655,
@@ -131,14 +134,19 @@ enum CameraModel
 class ArduCAM
 {
 public:
-	static Camera * createCamera(CameraModel model)
+	static Camera *createCamera(CameraModel model, bool is_plus = false)
 	{
 		switch (model)
 		{
 		case OV2640:
 			return new OV2640_MINI_2MP();
 			break;
-
+		case OV5640:
+			return new OV5640_MINI_5MP(is_plus);
+			break;
+		case OV5642:
+			return new OV5642_MINI_5MP(is_plus);
+			break;
 		default:
 			return new OV2640_MINI_2MP();
 			break;

@@ -9,72 +9,93 @@
 
 #define SPI_CS L07
 
-enum JPEG_Size
+enum Image_Size
 {
-    p160x120,
-    p176x144,
-    p320x240,
-    p352x288,
-    p640x480,
-    p800x600,
-    p1024x768,
-    p1280x1024,
-    p1600x1200,
+    j160x120,
+    j176x144,
+    j320x240,
+    j352x288,
+    j640x480,
+    r640x480,
+    j800x480,
+    j800x600,
+    j1024x768,
+    j1280x960,
+    r1280x960,
+    j1280x1024,
+    j1600x1200,
+    r1920x1080,
+    j2048x1536,
+    j2592x1944,
+    r2592x1944,
 };
 
-enum Color_Saturation
+enum Saturation
 {
-    Saturation4,
-    Saturation3,
-    Saturation2,
-    Saturation1,
-    Saturation0,
-    Saturation_1,
-    Saturation_2,
-    Saturation_3,
-    Saturation_4,
+    Plus_4,
+    Plus_3,
+    Plus_2,
+    Plus_1,
+    Plus_0,
+    Minus_1,
+    Minus_2,
+    Minus_3,
+    Minus_4,
 };
 
 enum Brightness
 {
-    Brightness4,
-    Brightness3,
-    Brightness2,
-    Brightness1,
-    Brightness0,
-    Brightness_1,
-    Brightness_2,
-    Brightness_3,
-    Brightness_4,
+    Plus_4,
+    Plus_3,
+    Plus_2,
+    Plus_1,
+    Plus_0,
+    Minus_1,
+    Minus_2,
+    Minus_3,
+    Minus_4,
 };
 
 enum Contrast
 {
-    Contrast4,
-    Contrast3,
-    Contrast2,
-    Contrast1,
-    Contrast0,
-    Contrast_1,
-    Contrast_2,
-    Contrast_3,
-    Contrast_4,
+    Plus_4,
+    Plus_3,
+    Plus_2,
+    Plus_1,
+    Plus_0,
+    Minus_1,
+    Minus_2,
+    Minus_3,
+    Minus_4,
 };
 
-enum Angle
+enum Sharpness
 {
-    degree_180,
-    degree_150,
-    degree_120,
-    degree_90,
-    degree_60,
-    degree_30,
-    degree_0,
-    degree30,
-    degree60,
-    degree90,
-    degree120,
-    degree150,
+    Auto,
+    Auto1,
+    Auto2,
+    Off,
+    Manual1,
+    Manual2,
+    Manual3,
+    Manual4,
+    Manual5,
+};
+
+enum Hue
+{
+    Minus_180,
+    Minus_150,
+    Minus_120,
+    Minus_90,
+    Minus_60,
+    Minus_30,
+    Minus_0,
+    Plus_30,
+    Plus_60,
+    Plus_90,
+    Plus_120,
+    Plus_150,
 };
 
 enum Special_Effects
@@ -108,20 +129,97 @@ enum Light_Mode
     Cloudy,
     Office,
     Home,
+    Fluorescent, //	Cool White Fluorescent, CWF
+    Tungsten,
+    Advanced_White_Balance,
+    Simple_White_Balance
+
+};
+
+enum Night_Mode
+{
+    ON,
+    OFF,
+};
+
+enum Banding_Filter
+{
+    OFF,
+    M50HZ,
+    M60HZ,
+    AUTO,
+};
+
+enum AutoExposureContol
+{
+    Plus_3,
+    Plus_2,
+    Plus_1,
+    Plus_0,
+    Minus_1,
+    Minus_2,
+    Minus_3,
+};
+
+enum Exposure
+{
+    Minus_17,
+    Minus_13,
+    Minus_10,
+    Minus_7,
+    Minus_3,
+    Default,
+    Plus_3,
+    Plus_7,
+    Plus_10,
+    Plus_13,
+    Plus_17,
+};
+
+enum MirrorFlip
+{
+    MIRROR,
+    MIRROR_FLIP,
+    FLIP,
+    NORMAL,
+};
+
+enum Compression
+{
+    High,
+    Default,
+    Low,
+};
+
+enum TestPattern
+{
+    Bar,
+    Square,
+    BWSquare,
+    DLI,
 };
 
 class Camera
 {
 public:
     Camera() {}
-    ~Camera() {};
+    ~Camera(){};
     virtual void InitCAM();
-    virtual void SetJPEGsize(JPEG_Size size);
-    virtual void SetLightMode(Light_Mode LightMode);
-    virtual void SetColorSaturation(Color_Saturation ColorSaturation);
-    virtual void SetBrightness(Brightness Brightness);
-    virtual void SetContrast(Contrast Contrast);
-    virtual void SetSpecialEffects(Special_Effects Specialeffect);
+    virtual void SetImageSize(Image_Size size);
+    virtual void SetLightMode(Light_Mode mode);
+    virtual void SetColorSaturation(Saturation saturation);
+    virtual void SetHue(Hue hue);
+    virtual void SetBrightness(Brightness brightness);
+    virtual void SetContrast(Contrast contrast);
+    virtual void SetSharpness(Sharpness sharpness);
+    virtual void SetSpecialEffects(Special_Effects effect);
+    virtual void SetNightMode(Night_Mode mode);
+    virtual void SetBandingFilter(Banding_Filter filter);
+    virtual void SetAutoExposureControl(AutoExposureContol mode);
+    virtual void SetExposureLevel(Exposure level);
+    virtual void SetMirrorFlip(MirrorFlip style);
+    virtual void SetCompression(Compression level);
+    virtual void SetTestPattern(TestPattern pattern);
     virtual bool checkModule();
 
     void flush_fifo();
