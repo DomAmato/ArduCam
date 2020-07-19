@@ -6,22 +6,22 @@ class OV5640_MINI_5MP : public Camera
 {
 public:
     OV5640_MINI_5MP(is_plus=false); // Constructor.
-    void InitCAM();
-    void SetImageSize(Image_Size size);
-    void SetLightMode(Light_Mode mode);
-    void SetColorSaturation(Saturation saturation);
-    void SetHue(Hue hue) = {}; // Not a available for this module
-    void SetBrightness(Brightness brightness);
-    void SetContrast(Contrast contrast);
-    void SetSpecialEffects(Special_Effects effect);
-    void SetNightMode(Night_Mode night_mode);
-    void SetBandingFilter(Banding_Filter band_filter);
-    void SetAutoExposureControl(AutoExposureContol aec_mode);
-    void SetExposureLevel(Exposure level) = {}; // Not a available for this module
-    void SetMirrorFlip(MirrorFlip style) = {}; // Not a available for this module
-    void SetCompression(Compression level) = {}; // Not a available for this module
-    void SetTestPattern(TestPattern pattern) = {}; // Not a available for this module
-    bool checkModule();
+    void InitCAM() override;
+    void SetImageSize(Image_Size size) override;
+    void SetLightMode(Light_Mode mode) override;
+    void SetColorSaturation(Saturation saturation) override;
+    void SetHue(Hue hue) override {}; // Not a available for this module
+    void SetBrightness(Brightness brightness) override;
+    void SetContrast(Contrast contrast) override;
+    void SetSpecialEffects(Special_Effects effect) override;
+    void SetNightMode(Night_Mode night_mode) override;
+    void SetBandingFilter(Banding_Filter band_filter) override;
+    void SetAutoExposureControl(AutoExposureContol aec_mode) override;
+    void SetExposureLevel(Exposure level) override {}; // Not a available for this module
+    void SetMirrorFlip(MirrorFlip style) override {}; // Not a available for this module
+    void SetCompression(Compression level) override {}; // Not a available for this module
+    void SetTestPattern(TestPattern pattern) override {}; // Not a available for this module
+    bool checkModule() override;
 private:
     bool is_plus_model = false;
 };

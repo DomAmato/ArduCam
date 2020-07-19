@@ -6,25 +6,25 @@ class OV5642_MINI_5MP : public Camera
 {
 public:
     OV5642_MINI_5MP(is_plus = false); // Constructor.
-    void InitCAM();
-    void SetImageSize(Image_Size size);
-    void SetLightMode(Light_Mode mode);
-    void SetColorSaturation(Saturation saturation);
-    void SetHue(Hue hue);
-    void SetBrightness(Brightness brightness);
-    void SetContrast(Contrast contrast);
-    void SetSharpness(Sharpness sharpness);
-    void SetSpecialEffects(Special_Effects effect);
-    void SetNightMode(Night_Mode night_mode);
-    void SetBandingFilter(Banding_Filter band_filter);
-    void SetExposureLevel(Exposure level);
-    void SetMirrorFlip(MirrorFlip style);
-    void SetCompression(Compression level);
-    void SetTestPattern(TestPattern pattern);
-    void SetAutoExposureControl(AutoExposureContol aec_mode) = {};
-    bool checkModule();
+    void InitCAM() override;
+    void SetImageSize(Image_Size size) override;
+    void SetLightMode(Light_Mode mode) override;
+    void SetColorSaturation(Saturation saturation) override;
+    void SetHue(Hue hue) override;
+    void SetBrightness(Brightness brightness) override;
+    void SetContrast(Contrast contrast) override;
+    void SetSharpness(Sharpness sharpness) override;
+    void SetSpecialEffects(Special_Effects effect) override;
+    void SetNightMode(Night_Mode night_mode) override;
+    void SetBandingFilter(Banding_Filter band_filter) override;
+    void SetExposureLevel(Exposure level) override;
+    void SetMirrorFlip(MirrorFlip style) override;
+    void SetCompression(Compression level) override;
+    void SetTestPattern(TestPattern pattern) override;
+    void SetAutoExposureControl(AutoExposureContol aec_mode) override {};
+    bool checkModule() override;
 
-    uint8_t bus_read(int address)
+    uint8_t bus_read(int address) override
     {
 #if (defined(ESP8266) || defined(__arm__) || defined(TEENSYDUINO))
         uint8_t value;
