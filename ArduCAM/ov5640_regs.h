@@ -4515,7 +4515,7 @@ const struct sensor_reg JPEG_QSXGA[] PROGMEM =
 };
 
 //5MP
-const struct sensor_reg 5MP_JPEG[] PROGMEM =
+const struct sensor_reg JPEG_5MP[] PROGMEM =
 	{
 		{0x3800, 0x00},
 		{0x3801, 0x00},

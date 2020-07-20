@@ -207,7 +207,7 @@ public:
         m_fmt = Format::JPEG_FMT;
         sensor_addr = 0x00;
     }
-    virtual ~Camera() {};
+    ~Camera() {};
     virtual void InitCAM() = 0;
     virtual bool checkModule() =0;
     virtual void SetImageSize(Image_Size size);

@@ -17,6 +17,13 @@ public:
     void SetBandingFilter(Banding_Filter band_filter) override;
     void SetAutoExposureControl(AutoExposureContol aec_mode) override;
     bool checkModule() override;
+    // Not available for this module
+    void SetHue(Hue hue) override{};
+    void SetSharpness(Sharpness sharpness) override{};
+    void SetExposureLevel(Exposure level) override{};
+    void SetMirrorFlip(MirrorFlip style) override{};
+    void SetCompression(Compression amount) override{};
+    void SetTestPattern(TestPattern pattern) override{};
 private:
     bool is_plus_model = false;
 };

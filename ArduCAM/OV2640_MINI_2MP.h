@@ -14,5 +14,15 @@ public:
     void SetContrast(Contrast contrast) override;
     void SetSpecialEffects(Special_Effects effect) override;
     bool checkModule() override;
+    // Not available for this module
+    void SetHue(Hue hue) override{};
+    void SetSharpness(Sharpness sharpness) override{};
+    void SetNightMode(Night_Mode mode) override{};
+    void SetBandingFilter(Banding_Filter filter) override{};
+    void SetAutoExposureControl(AutoExposureContol level) override{};
+    void SetExposureLevel(Exposure level) override{};
+    void SetMirrorFlip(MirrorFlip style) override{};
+    void SetCompression(Compression amount) override{};
+    void SetTestPattern(TestPattern pattern) override{};
 };
 #endif

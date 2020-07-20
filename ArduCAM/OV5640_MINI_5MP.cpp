@@ -11,7 +11,7 @@ OV5640_MINI_5MP::OV5640_MINI_5MP(bool is_plus)
 void OV5640_MINI_5MP::InitCAM()
 {
     delay(100);
-    if (m_fmt == JPEG_FMT)
+    if (m_fmt == Format::JPEG_FMT)
     {
         wrSensorReg16_8(0x3103, 0x11);
         wrSensorReg16_8(0x3008, 0x82);
@@ -43,31 +43,31 @@ void OV5640_MINI_5MP::SetImageSize(Image_Size size)
 {
     switch (size)
     {
-    case j320x240:
+    case Image_Size::j320x240:
         wrSensorRegs16_8(QSXGA2QVGA);
         break;
-    case j352x288:
+    case Image_Size::j352x288:
         wrSensorRegs16_8(QSXGA2CIF);
         break;
-    case j640x480:
+    case Image_Size::j640x480:
         wrSensorRegs16_8(QSXGA2VGA);
         break;
-    case j800x480:
+    case Image_Size::j800x480:
         wrSensorRegs16_8(QSXGA2WVGA);
         break;
-    case j1024x768:
+    case Image_Size::j1024x768:
         wrSensorRegs16_8(QSXGA2XGA);
         break;
-    case j1280x960:
+    case Image_Size::j1280x960:
         wrSensorRegs16_8(QSXGA2SXGA);
         break;
-    case j1600x1200:
+    case Image_Size::j1600x1200:
         wrSensorRegs16_8(QSXGA2UXGA);
         break;
-    case j2048x1536:
+    case Image_Size::j2048x1536:
         wrSensorRegs16_8(QSXGA2QXGA);
         break;
-    case j2592x1944:
+    case Image_Size::j2592x1944:
         wrSensorRegs16_8(JPEG_QSXGA);
         break;
     default:
@@ -81,7 +81,7 @@ void OV5640_MINI_5MP::SetLightMode(Light_Mode mode)
 {
     switch (mode)
     {
-    case Auto:
+    case Light_Mode::Auto:
         wrSensorReg16_8(0x3212, 0x03); // start group 3
         wrSensorReg16_8(0x3406, 0x00);
         wrSensorReg16_8(0x3400, 0x04);
@@ -94,7 +94,7 @@ void OV5640_MINI_5MP::SetLightMode(Light_Mode mode)
         wrSensorReg16_8(0x3212, 0xa3); // lanuch group 3
         wrSensorReg16_8(0x5183, 0x0);
         break;
-    case Sunny:
+    case Light_Mode::Sunny:
         wrSensorReg16_8(0x3212, 0x03); // start group 3
         wrSensorReg16_8(0x3406, 0x01);
         wrSensorReg16_8(0x3400, 0x06);
@@ -106,7 +106,7 @@ void OV5640_MINI_5MP::SetLightMode(Light_Mode mode)
         wrSensorReg16_8(0x3212, 0x13); // end group 3
         wrSensorReg16_8(0x3212, 0xa3); // lanuch group 3
         break;
-    case Office:
+    case Light_Mode::Office:
         wrSensorReg16_8(0x3212, 0x03); // start group 3
         wrSensorReg16_8(0x3406, 0x01);
         wrSensorReg16_8(0x3400, 0x05);
@@ -128,7 +128,7 @@ void OV5640_MINI_5MP::SetLightMode(Light_Mode mode)
         wrSensorReg16_8(0x3212, 0x13); // end group 3
         wrSensorReg16_8(0x3212, 0xa3); // lanuch group 3
         break;
-    case Cloudy:
+    case Light_Mode::Cloudy:
         wrSensorReg16_8(0x3212, 0x03); // start group 3
         wrSensorReg16_8(0x3406, 0x01);
         wrSensorReg16_8(0x3400, 0x06);
@@ -140,7 +140,7 @@ void OV5640_MINI_5MP::SetLightMode(Light_Mode mode)
         wrSensorReg16_8(0x3212, 0x13); // end group 3
         wrSensorReg16_8(0x3212, 0xa3); // lanuch group 3
         break;
-    case Home:
+    case Light_Mode::Home:
         wrSensorReg16_8(0x3212, 0x03); // start group 3
         wrSensorReg16_8(0x3406, 0x01);
         wrSensorReg16_8(0x3400, 0x04);
@@ -161,7 +161,7 @@ void OV5640_MINI_5MP::SetColorSaturation(Saturation saturation)
 {
     switch (saturation)
     {
-    case Plus_3:
+    case Saturation::Plus_3:
         wrSensorReg16_8(0x3212, 0x03); // start group 3
         wrSensorReg16_8(0x5381, 0x1c);
         wrSensorReg16_8(0x5382, 0x5a);
@@ -177,7 +177,7 @@ void OV5640_MINI_5MP::SetColorSaturation(Saturation saturation)
         wrSensorReg16_8(0x3212, 0x13); // end group 3
         wrSensorReg16_8(0x3212, 0xa3); // launch group 3
         break;
-    case Plus_2:
+    case Saturation::Plus_2:
         wrSensorReg16_8(0x3212, 0x03); // start group 3
         wrSensorReg16_8(0x5381, 0x1c);
         wrSensorReg16_8(0x5382, 0x5a);
@@ -193,7 +193,7 @@ void OV5640_MINI_5MP::SetColorSaturation(Saturation saturation)
         wrSensorReg16_8(0x3212, 0x13); // end group 3
         wrSensorReg16_8(0x3212, 0xa3); // launch group 3
         break;
-    case Plus_1:
+    case Saturation::Plus_1:
         wrSensorReg16_8(0x3212, 0x03); // start group 3
         wrSensorReg16_8(0x5381, 0x1c);
         wrSensorReg16_8(0x5382, 0x5a);
@@ -209,7 +209,7 @@ void OV5640_MINI_5MP::SetColorSaturation(Saturation saturation)
         wrSensorReg16_8(0x3212, 0x13); // end group 3
         wrSensorReg16_8(0x3212, 0xa3); // launch group 3
         break;
-    case Plus_0:
+    case Saturation::Plus_0:
         wrSensorReg16_8(0x3212, 0x03); // start group 3
         wrSensorReg16_8(0x5381, 0x1c);
         wrSensorReg16_8(0x5382, 0x5a);
@@ -225,7 +225,7 @@ void OV5640_MINI_5MP::SetColorSaturation(Saturation saturation)
         wrSensorReg16_8(0x3212, 0x13); // end group 3
         wrSensorReg16_8(0x3212, 0xa3); // launch group 3
         break;
-    case Minus_1:
+    case Saturation::Minus_1:
         wrSensorReg16_8(0x3212, 0x03); // start group 3
         wrSensorReg16_8(0x5381, 0x1c);
         wrSensorReg16_8(0x5382, 0x5a);
@@ -241,7 +241,7 @@ void OV5640_MINI_5MP::SetColorSaturation(Saturation saturation)
         wrSensorReg16_8(0x3212, 0x13); // end group 3
         wrSensorReg16_8(0x3212, 0xa3); // launch group 3
         break;
-    case Minus_2:
+    case Saturation::Minus_2:
         wrSensorReg16_8(0x3212, 0x03); // start group 3
         wrSensorReg16_8(0x5381, 0x1c);
         wrSensorReg16_8(0x5382, 0x5a);
@@ -257,7 +257,7 @@ void OV5640_MINI_5MP::SetColorSaturation(Saturation saturation)
         wrSensorReg16_8(0x3212, 0x13); // end group 3
         wrSensorReg16_8(0x3212, 0xa3); // launch group 3
         break;
-    case Minus_3:
+    case Saturation::Minus_3:
         wrSensorReg16_8(0x3212, 0x03); // start group 3
         wrSensorReg16_8(0x5381, 0x1c);
         wrSensorReg16_8(0x5382, 0x5a);
@@ -280,63 +280,63 @@ void OV5640_MINI_5MP::SetBrightness(Brightness brightness)
 {
     switch (brightness)
     {
-    case Plus_4:
+    case Brightness::Plus_4:
         wrSensorReg16_8(0x3212, 0x03); // start group 3
         wrSensorReg16_8(0x5587, 0x40);
         wrSensorReg16_8(0x5588, 0x01);
         wrSensorReg16_8(0x3212, 0x13); // end group 3
         wrSensorReg16_8(0x3212, 0xa3); // launch group 3
         break;
-    case Plus_3:
+    case Brightness::Plus_3:
         wrSensorReg16_8(0x3212, 0x03); // start group 3
         wrSensorReg16_8(0x5587, 0x30);
         wrSensorReg16_8(0x5588, 0x01);
         wrSensorReg16_8(0x3212, 0x13); // end group 3
         wrSensorReg16_8(0x3212, 0xa3); // launch group 3
         break;
-    case Plus_2:
+    case Brightness::Plus_2:
         wrSensorReg16_8(0x3212, 0x03); // start group 3
         wrSensorReg16_8(0x5587, 0x20);
         wrSensorReg16_8(0x5588, 0x01);
         wrSensorReg16_8(0x3212, 0x13); // end group 3
         wrSensorReg16_8(0x3212, 0xa3); // launch group 3
         break;
-    case Plus_1:
+    case Brightness::Plus_1:
         wrSensorReg16_8(0x3212, 0x03); // start group 3
         wrSensorReg16_8(0x5587, 0x10);
         wrSensorReg16_8(0x5588, 0x01);
         wrSensorReg16_8(0x3212, 0x13); // end group 3
         wrSensorReg16_8(0x3212, 0xa3); // launch group 3
         break;
-    case Plus_0:
+    case Brightness::Plus_0:
         wrSensorReg16_8(0x3212, 0x03); // start group 3
         wrSensorReg16_8(0x5587, 0x00);
         wrSensorReg16_8(0x5588, 0x01);
         wrSensorReg16_8(0x3212, 0x13); // end group 3
         wrSensorReg16_8(0x3212, 0xa3); // launch group 3
         break;
-    case Minus_1:
+    case Brightness::Minus_1:
         wrSensorReg16_8(0x3212, 0x03); // start group 3
         wrSensorReg16_8(0x5587, 0x10);
         wrSensorReg16_8(0x5588, 0x09);
         wrSensorReg16_8(0x3212, 0x13); // end group 3
         wrSensorReg16_8(0x3212, 0xa3); // launch group 3
         break;
-    case Minus_2:
+    case Brightness::Minus_2:
         wrSensorReg16_8(0x3212, 0x03); // start group 3
         wrSensorReg16_8(0x5587, 0x20);
         wrSensorReg16_8(0x5588, 0x09);
         wrSensorReg16_8(0x3212, 0x13); // end group 3
         wrSensorReg16_8(0x3212, 0xa3); // launch group 3
         break;
-    case Minus_3:
+    case Brightness::Minus_3:
         wrSensorReg16_8(0x3212, 0x03); // start group 3
         wrSensorReg16_8(0x5587, 0x30);
         wrSensorReg16_8(0x5588, 0x09);
         wrSensorReg16_8(0x3212, 0x13); // end group 3
         wrSensorReg16_8(0x3212, 0xa3); // launch group 3
         break;
-    case Minus_4:
+    case Brightness::Minus_4:
         wrSensorReg16_8(0x3212, 0x03); // start group 3
         wrSensorReg16_8(0x5587, 0x40);
         wrSensorReg16_8(0x5588, 0x09);
@@ -350,28 +350,28 @@ void OV5640_MINI_5MP::SetContrast(Contrast contrast)
 {
     switch (contrast)
     {
-    case Plus_3:
+    case Contrast::Plus_3:
         wrSensorReg16_8(0x3212, 0x03); // start group 3
         wrSensorReg16_8(0x5586, 0x2c);
         wrSensorReg16_8(0x5585, 0x1c);
         wrSensorReg16_8(0x3212, 0x13); // end group 3
         wrSensorReg16_8(0x3212, 0xa3); // launch group 3
         break;
-    case Plus_2:
+    case Contrast::Plus_2:
         wrSensorReg16_8(0x3212, 0x03); // start group 3
         wrSensorReg16_8(0x5586, 0x28);
         wrSensorReg16_8(0x5585, 0x18);
         wrSensorReg16_8(0x3212, 0x13); // end group 3
         wrSensorReg16_8(0x3212, 0xa3); // launch group 3
         break;
-    case Plus_1:
+    case Contrast::Plus_1:
         wrSensorReg16_8(0x3212, 0x03); // start group 3
         wrSensorReg16_8(0x5586, 0x24);
         wrSensorReg16_8(0x5585, 0x10);
         wrSensorReg16_8(0x3212, 0x13); // end group 3
         wrSensorReg16_8(0x3212, 0xa3); // launch group 3
         break;
-    case Plus_0:
+    case Contrast::Plus_0:
         wrSensorReg16_8(0x3212, 0x03); // start group 3
         wrSensorReg16_8(0x3212, 0x03); // start group 3
         wrSensorReg16_8(0x5586, 0x20);
@@ -379,21 +379,21 @@ void OV5640_MINI_5MP::SetContrast(Contrast contrast)
         wrSensorReg16_8(0x3212, 0x13); // end group 3
         wrSensorReg16_8(0x3212, 0xa3); // launch group 3
         break;
-    case Minus_1:
+    case Contrast::Minus_1:
         wrSensorReg16_8(0x3212, 0x03); // start group 3
         wrSensorReg16_8(0x5586, 0x1c);
         wrSensorReg16_8(0x5585, 0x1c);
         wrSensorReg16_8(0x3212, 0x13); // end group 3
         wrSensorReg16_8(0x3212, 0xa3); // launch group 3
         break;
-    case Minus_2:
+    case Contrast::Minus_2:
         wrSensorReg16_8(0x3212, 0x03); // start group 3
         wrSensorReg16_8(0x5586, 0x18);
         wrSensorReg16_8(0x5585, 0x18);
         wrSensorReg16_8(0x3212, 0x13); // end group 3
         wrSensorReg16_8(0x3212, 0xa3); // launch group 3
         break;
-    case Minus_3:
+    case Contrast::Minus_3:
         wrSensorReg16_8(0x3212, 0x03); // start group 3
         wrSensorReg16_8(0x5586, 0x14);
         wrSensorReg16_8(0x5585, 0x14);
@@ -407,7 +407,7 @@ void OV5640_MINI_5MP::SetSpecialEffects(Special_Effects effect)
 {
     switch (effect)
     {
-    case Normal:
+    case Special_Effects::Normal:
         wrSensorReg16_8(0x3212, 0x03); // start group 3
         wrSensorReg16_8(0x5580, 0x06);
         wrSensorReg16_8(0x5583, 0x40); // sat U
@@ -416,7 +416,7 @@ void OV5640_MINI_5MP::SetSpecialEffects(Special_Effects effect)
         wrSensorReg16_8(0x3212, 0x13); // end group 3
         wrSensorReg16_8(0x3212, 0xa3); // launch group
         break;
-    case Blueish:
+    case Special_Effects::Blueish:
         wrSensorReg16_8(0x3212, 0x03); // start group 3
         wrSensorReg16_8(0x5580, 0x1e);
         wrSensorReg16_8(0x5583, 0xa0);
@@ -425,7 +425,7 @@ void OV5640_MINI_5MP::SetSpecialEffects(Special_Effects effect)
         wrSensorReg16_8(0x3212, 0x13); // end group 3
         wrSensorReg16_8(0x3212, 0xa3); // launch group 3
         break;
-    case Reddish:
+    case Special_Effects::Reddish:
         wrSensorReg16_8(0x3212, 0x03); // start group 3
         wrSensorReg16_8(0x5580, 0x1e);
         wrSensorReg16_8(0x5583, 0x80);
@@ -434,7 +434,7 @@ void OV5640_MINI_5MP::SetSpecialEffects(Special_Effects effect)
         wrSensorReg16_8(0x3212, 0x13); // end group 3
         wrSensorReg16_8(0x3212, 0xa3); // launch group 3
         break;
-    case BW:
+    case Special_Effects::BW:
         wrSensorReg16_8(0x3212, 0x03); // start group 3
         wrSensorReg16_8(0x5580, 0x1e);
         wrSensorReg16_8(0x5583, 0x80);
@@ -443,7 +443,7 @@ void OV5640_MINI_5MP::SetSpecialEffects(Special_Effects effect)
         wrSensorReg16_8(0x3212, 0x13); // end group 3
         wrSensorReg16_8(0x3212, 0xa3); // launch group 3
         break;
-    case Sepia:
+    case Special_Effects::Sepia:
         wrSensorReg16_8(0x3212, 0x03); // start group 3
         wrSensorReg16_8(0x5580, 0x1e);
         wrSensorReg16_8(0x5583, 0x40);
@@ -453,7 +453,7 @@ void OV5640_MINI_5MP::SetSpecialEffects(Special_Effects effect)
         wrSensorReg16_8(0x3212, 0xa3); // launch group 3
         break;
 
-    case Negative:
+    case Special_Effects::Negative:
         wrSensorReg16_8(0x3212, 0x03); // start group 3
         wrSensorReg16_8(0x5580, 0x40);
         wrSensorReg16_8(0x5003, 0x08);
@@ -462,7 +462,7 @@ void OV5640_MINI_5MP::SetSpecialEffects(Special_Effects effect)
         wrSensorReg16_8(0x3212, 0x13); // end group 3
         wrSensorReg16_8(0x3212, 0xa3); // launch group 3
         break;
-    case Greenish:
+    case Special_Effects::Greenish:
         wrSensorReg16_8(0x3212, 0x03); // start group 3
         wrSensorReg16_8(0x5580, 0x1e);
         wrSensorReg16_8(0x5583, 0x60);
@@ -471,7 +471,7 @@ void OV5640_MINI_5MP::SetSpecialEffects(Special_Effects effect)
         wrSensorReg16_8(0x3212, 0x13); // end group 3
         wrSensorReg16_8(0x3212, 0xa3); // launch group 3
         break;
-    case Overexposure:
+    case Special_Effects::Overexposure:
         wrSensorReg16_8(0x3212, 0x03); // start group 3
         wrSensorReg16_8(0x5580, 0x1e);
         wrSensorReg16_8(0x5583, 0xf0);
@@ -480,7 +480,7 @@ void OV5640_MINI_5MP::SetSpecialEffects(Special_Effects effect)
         wrSensorReg16_8(0x3212, 0x13); // end group 3
         wrSensorReg16_8(0x3212, 0xa3); // launch group 3
         break;
-    case Solarize:
+    case Special_Effects::Solarize:
         wrSensorReg16_8(0x3212, 0x03); // start group 3
         wrSensorReg16_8(0x5580, 0x06);
         wrSensorReg16_8(0x5583, 0x40); // sat U
@@ -497,12 +497,12 @@ void OV5640_MINI_5MP::SetNightMode(Night_Mode night_mode)
     uint8_t reg_val;
     switch (night_mode)
     {
-    case ON:
+    case Night_Mode::ON:
         rdSensorReg16_8(0x3a00, &reg_val);
         reg_val = reg_val | 0x04;
         wrSensorReg16_8(0x3a00, reg_val);
         break;
-    case OFF:
+    case Night_Mode::OFF:
         rdSensorReg16_8(0x3a00, &reg_val);
         reg_val = reg_val & 0xfb;
         wrSensorReg16_8(0x3a00, reg_val);
@@ -515,26 +515,26 @@ void OV5640_MINI_5MP::SetBandingFilter(Banding_Filter band_filter)
     uint8_t reg_val;
     switch (band_filter)
     {
-    case OFF:
+    case Banding_Filter::OFF:
         rdSensorReg16_8(0x3a00, &reg_val);
         reg_val = reg_val & 0xdf; // turn off banding filter
         wrSensorReg16_8(0x3a00, reg_val);
         break;
-    case M50HZ:
+    case Banding_Filter::M50HZ:
         wrSensorReg16_8(0x3c00, 04); // set to 50Hz
         wrSensorReg16_8(0x3c01, 80); // manual banding filter
         rdSensorReg16_8(0x3a00, &reg_val);
         reg_val = reg_val | 0x20; // turn on banding filter
         wrSensorReg16_8(0x3a00, reg_val);
         break;
-    case M60HZ:
+    case Banding_Filter::M60HZ:
         wrSensorReg16_8(0x3c00, 00); // set to 60Hz
         wrSensorReg16_8(0x3c01, 80); // manual banding filter
         rdSensorReg16_8(0x3a00, &reg_val);
         reg_val = reg_val | 0x20; // turn on banding filter
         wrSensorReg16_8(0x3a00, reg_val);
         break;
-    case AUTO:
+    case Banding_Filter::AUTO:
         wrSensorReg16_8(0x3c01, 00); // auto banding filter
         rdSensorReg16_8(0x3a00, &reg_val);
         reg_val = reg_val & 0xdf; // turn off banding filter
@@ -547,7 +547,7 @@ void OV5640_MINI_5MP::SetAutoExposureControl(AutoExposureContol aec_mode)
 {
     switch (aec_mode)
     {
-    case Plus_3:
+    case AutoExposureContol::Plus_3:
         wrSensorReg16_8(0x3a0f, 0x60);
         wrSensorReg16_8(0x3a10, 0x58);
         wrSensorReg16_8(0x3a11, 0xa0);
@@ -555,7 +555,7 @@ void OV5640_MINI_5MP::SetAutoExposureControl(AutoExposureContol aec_mode)
         wrSensorReg16_8(0x3a1e, 0x58);
         wrSensorReg16_8(0x3a1f, 0x20);
         break;
-    case Plus_2:
+    case AutoExposureContol::Plus_2:
         wrSensorReg16_8(0x3a0f, 0x50);
         wrSensorReg16_8(0x3a10, 0x48);
         wrSensorReg16_8(0x3a11, 0x90);
@@ -563,7 +563,7 @@ void OV5640_MINI_5MP::SetAutoExposureControl(AutoExposureContol aec_mode)
         wrSensorReg16_8(0x3a1e, 0x48);
         wrSensorReg16_8(0x3a1f, 0x20);
         break;
-    case Plus_1:
+    case AutoExposureContol::Plus_1:
         wrSensorReg16_8(0x3a0f, 0x40);
         wrSensorReg16_8(0x3a10, 0x38);
         wrSensorReg16_8(0x3a11, 0x71);
@@ -571,7 +571,7 @@ void OV5640_MINI_5MP::SetAutoExposureControl(AutoExposureContol aec_mode)
         wrSensorReg16_8(0x3a1e, 0x38);
         wrSensorReg16_8(0x3a1f, 0x10);
         break;
-    case Plus_0:
+    case AutoExposureContol::Plus_0:
         wrSensorReg16_8(0x3a0f, 0x38);
         wrSensorReg16_8(0x3a10, 0x30);
         wrSensorReg16_8(0x3a11, 0x61);
@@ -579,7 +579,7 @@ void OV5640_MINI_5MP::SetAutoExposureControl(AutoExposureContol aec_mode)
         wrSensorReg16_8(0x3a1e, 0x30);
         wrSensorReg16_8(0x3a1f, 0x10);
         break;
-    case Minus_1:
+    case AutoExposureContol::Minus_1:
         wrSensorReg16_8(0x3a0f, 0x30);
         wrSensorReg16_8(0x3a10, 0x28);
         wrSensorReg16_8(0x3a11, 0x61);
@@ -587,7 +587,7 @@ void OV5640_MINI_5MP::SetAutoExposureControl(AutoExposureContol aec_mode)
         wrSensorReg16_8(0x3a1e, 0x28);
         wrSensorReg16_8(0x3a1f, 0x10);
         break;
-    case Minus_2:
+    case AutoExposureContol::Minus_2:
         wrSensorReg16_8(0x3a0f, 0x20);
         wrSensorReg16_8(0x3a10, 0x18);
         wrSensorReg16_8(0x3a11, 0x41);
@@ -595,7 +595,7 @@ void OV5640_MINI_5MP::SetAutoExposureControl(AutoExposureContol aec_mode)
         wrSensorReg16_8(0x3a1e, 0x18);
         wrSensorReg16_8(0x3a1f, 0x10);
         break;
-    case Minus_3:
+    case AutoExposureContol::Minus_3:
         wrSensorReg16_8(0x3a0f, 0x10);
         wrSensorReg16_8(0x3a10, 0x08);
         wrSensorReg16_8(0x3a1b, 0x10);
