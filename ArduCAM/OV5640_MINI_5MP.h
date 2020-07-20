@@ -5,7 +5,7 @@
 class OV5640_MINI_5MP : public Camera
 {
 public:
-    OV5640_MINI_5MP(is_plus=false); // Constructor.
+    OV5640_MINI_5MP(bool is_plus=false); // Constructor.
     void InitCAM() override;
     void SetImageSize(Image_Size size) override;
     void SetLightMode(Light_Mode mode) override;

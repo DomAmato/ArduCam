@@ -1,3 +1,4 @@
+#pragma once
 #ifndef CAMERA_H
 #define CAMERA_H
 #include "Arduino.h"
@@ -9,7 +10,7 @@
 
 #define SPI_CS L07
 
-enum Image_Size
+enum class Image_Size
 {
     j160x120,
     j176x144,
@@ -30,7 +31,7 @@ enum Image_Size
     r2592x1944,
 };
 
-enum Saturation
+enum class Saturation
 {
     Plus_4,
     Plus_3,
@@ -43,7 +44,7 @@ enum Saturation
     Minus_4,
 };
 
-enum Brightness
+enum class Brightness
 {
     Plus_4,
     Plus_3,
@@ -56,7 +57,7 @@ enum Brightness
     Minus_4,
 };
 
-enum Contrast
+enum class Contrast
 {
     Plus_4,
     Plus_3,
@@ -69,7 +70,7 @@ enum Contrast
     Minus_4,
 };
 
-enum Sharpness
+enum class Sharpness
 {
     Auto,
     Auto1,
@@ -82,7 +83,7 @@ enum Sharpness
     Manual5,
 };
 
-enum Hue
+enum class Hue
 {
     Minus_180,
     Minus_150,
@@ -98,7 +99,7 @@ enum Hue
     Plus_150,
 };
 
-enum Special_Effects
+enum class Special_Effects
 {
     Antique,
     Bluish,
@@ -115,14 +116,14 @@ enum Special_Effects
     Yellowish,
 };
 
-enum Format
+enum class Format
 {
     BMP_FMT,
     JPEG_FMT,
     RAW_FMT,
 };
 
-enum Light_Mode
+enum class Light_Mode
 {
     Auto,
     Sunny,
@@ -136,13 +137,13 @@ enum Light_Mode
 
 };
 
-enum Night_Mode
+enum class Night_Mode
 {
     ON,
     OFF,
 };
 
-enum Banding_Filter
+enum class Banding_Filter
 {
     OFF,
     M50HZ,
@@ -150,7 +151,7 @@ enum Banding_Filter
     AUTO,
 };
 
-enum AutoExposureContol
+enum class AutoExposureContol
 {
     Plus_3,
     Plus_2,
@@ -161,7 +162,7 @@ enum AutoExposureContol
     Minus_3,
 };
 
-enum Exposure
+enum class Exposure
 {
     Minus_17,
     Minus_13,
@@ -176,7 +177,7 @@ enum Exposure
     Plus_17,
 };
 
-enum MirrorFlip
+enum class MirrorFlip
 {
     MIRROR,
     MIRROR_FLIP,
@@ -184,14 +185,14 @@ enum MirrorFlip
     NORMAL,
 };
 
-enum Compression
+enum class Compression
 {
     High,
     Default,
     Low,
 };
 
-enum TestPattern
+enum class TestPattern
 {
     Bar,
     Square,
@@ -203,7 +204,7 @@ class Camera
 {
 public:
     Camera() {
-        m_fmt = JPEG_FMT;
+        m_fmt = Format::JPEG_FMT;
         sensor_addr = 0x00;
     }
     virtual ~Camera() {};
@@ -242,7 +243,7 @@ public:
     void set_mode(uint8_t mode);
 
     void bus_write(int address, int value);
-    uint8_t bus_read(int address);
+    virtual uint8_t bus_read(int address);
 
     // Write 8 bit values to 8 bit register address
     int wrSensorRegs8_8(const struct sensor_reg *);

@@ -121,7 +121,6 @@ enum CameraModel
 	OV7725,
 	OV7660,
 	MT9M001,
-	OV5640,
 	MT9D111_B,
 	OV9650,
 	MT9V111,

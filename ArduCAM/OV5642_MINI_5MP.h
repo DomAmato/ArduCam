@@ -5,7 +5,7 @@
 class OV5642_MINI_5MP : public Camera
 {
 public:
-    OV5642_MINI_5MP(is_plus = false); // Constructor.
+    OV5642_MINI_5MP(bool is_plus = false); // Constructor.
     void InitCAM() override;
     void SetImageSize(Image_Size size) override;
     void SetLightMode(Light_Mode mode) override;
@@ -28,12 +28,12 @@ public:
     {
 #if (defined(ESP8266) || defined(__arm__) || defined(TEENSYDUINO))
         uint8_t value;
+        SPI.beginTransaction(SPI_CS); //enables the specified chip select output
         SPI.transfer(address);
         value = SPI.transfer(0x00);
-        // correction for bit rotation from readback
-        value = (byte)(value >> 1) | (value << 7);
-        // take the SS pin high to de-select the chip:
-        sbi(P_CS, B_CS);
+		  // correction for bit rotation from readback
+		  value = (byte)(value >> 1) | (value << 7);
+        SPI.endTransaction(); //release the chip select
         return value;
 #else
     return Camera::bus_read(address);
