@@ -739,5 +739,5 @@ bool OV5642_MINI_5MP::checkModule()
     wrSensorReg8_8(0xff, 0x01);
     rdSensorReg8_8(OV5642_CHIPID_HIGH, &vid);
     rdSensorReg8_8(OV5642_CHIPID_LOW, &pid);
-    return ((vid != 0x26) && ((pid != 0x41) || (pid != 0x42)));
+    return ((vid != 0x26) && !((pid == 0x41) || (pid == 0x42)));
 }
