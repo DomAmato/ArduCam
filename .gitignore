@@ -29,3 +29,5 @@
 
 # bakup file
 *.bak
+
+*.DS_Store
