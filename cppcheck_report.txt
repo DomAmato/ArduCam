@@ -1,0 +1,185 @@
+[ArduCAM/Camera.cpp:121]: (style) The scope of the variable 'err' can be reduced.
+[ArduCAM/Camera.cpp:138]: (style) The scope of the variable 'err' can be reduced.
+[ArduCAM/Camera.cpp:158]: (style) The scope of the variable 'err' can be reduced.
+[ArduCAM/Camera.cpp:178]: (style) The scope of the variable 'err' can be reduced.
+[ArduCAM/Camera.cpp:237]: (style) The scope of the variable 'temp' can be reduced.
+[ArduCAM/Camera.cpp:300]: (style) The scope of the variable 'temp' can be reduced.
+[ArduCAM/Camera.cpp:129]: (style) Variable 'err' is assigned a value that is never used.
+[ArduCAM/Camera.cpp:147]: (style) Variable 'err' is assigned a value that is never used.
+[ArduCAM/Camera.cpp:167]: (style) Variable 'err' is assigned a value that is never used.
+[ArduCAM/Camera.cpp:185]: (style) Variable 'err' is assigned a value that is never used.
+[ArduCAM/Camera.h:210]: (warning, inconclusive) Class 'Camera' which has virtual members does not have a virtual destructor.
+[ArduCAM/Camera.cpp:29] -> [ArduCAM/Camera.h:238]: (performance, inconclusive) Technically the member function 'Camera::set_fifo_burst' can be static (but you may consider moving to unnamed namespace).
+[ArduCAM/Camera.cpp:100] -> [ArduCAM/Camera.h:245]: (performance, inconclusive) Technically the member function 'Camera::bus_write' can be static (but you may consider moving to unnamed namespace).
+[ArduCAM/OV5640_MINI_5MP.h:8]: (style) Class 'OV5640_MINI_5MP' has a constructor with 1 argument that is not explicit.
+[ArduCAM/OV5642_MINI_5MP.h:8]: (style) Class 'OV5642_MINI_5MP' has a constructor with 1 argument that is not explicit.
+[ArduCAM/OV5642_MINI_5MP.h:22] -> [ArduCAM/OV5642_MINI_5MP.cpp:698]: (style, inconclusive) Function 'SetCompression' argument 1 names different: declaration 'level' definition 'quality'.
+[ArduCAM/examples/RaspberryPi/arducam_arch_raspberrypi.c:135]: (style) The scope of the variable 'r' can be reduced.
+[ArduCAM/examples/RaspberryPi/arducam_arch_raspberrypi.c:176]: (error) Uninitialized variable: reg_addr
+[ArduCAM/examples/RaspberryPi/arducam_arch_raspberrypi.c:176]: (error) Uninitialized variable: reg_val
+[ArduCAM/examples/RaspberryPi/arducam_arch_raspberrypi.c:197]: (error) Uninitialized variable: reg_addr
+[ArduCAM/examples/RaspberryPi/arducam_arch_raspberrypi.c:197]: (error) Uninitialized variable: reg_val
+[ArduCAM/examples/RaspberryPi/arducam_ov2640_4cams_capture.cpp:85]: (warning) Logical disjunction always evaluates to true: pid != 65 || pid != 66.
+[ArduCAM/examples/RaspberryPi/arducam_ov2640_4cams_capture.cpp:201]: (portability) %d in format string (no. 1) requires 'int' but the argument type is 'size_t {aka unsigned long}'.
+[ArduCAM/examples/RaspberryPi/arducam_ov2640_4cams_capture.cpp:202]: (portability) %d in format string (no. 1) requires 'int' but the argument type is 'size_t {aka unsigned long}'.
+[ArduCAM/examples/RaspberryPi/arducam_ov2640_4cams_capture.cpp:203]: (portability) %d in format string (no. 1) requires 'int' but the argument type is 'size_t {aka unsigned long}'.
+[ArduCAM/examples/RaspberryPi/arducam_ov2640_4cams_capture.cpp:204]: (portability) %d in format string (no. 1) requires 'int' but the argument type is 'size_t {aka unsigned long}'.
+[ArduCAM/examples/RaspberryPi/arducam_ov2640_4cams_capture.cpp:95]: (style) The scope of the variable 'temp' can be reduced.
+[ArduCAM/examples/RaspberryPi/arducam_ov2640_4cams_capture.cpp:95]: (style) The scope of the variable 'temp_last' can be reduced.
+[ArduCAM/examples/RaspberryPi/arducam_ov2640_capture.cpp:44]: (warning) Logical disjunction always evaluates to true: pid != 65 || pid != 66.
+[ArduCAM/examples/RaspberryPi/arducam_ov2640_capture.cpp:109]: (portability) %d in format string (no. 1) requires 'int' but the argument type is 'size_t {aka unsigned long}'.
+[ArduCAM/examples/RaspberryPi/arducam_ov2640_capture.cpp:53]: (style) The scope of the variable 'temp' can be reduced.
+[ArduCAM/examples/RaspberryPi/arducam_ov2640_capture.cpp:53]: (style) The scope of the variable 'temp_last' can be reduced.
+[ArduCAM/examples/RaspberryPi/arducam_ov5640_4cams_capture.cpp:200]: (portability) %d in format string (no. 1) requires 'int' but the argument type is 'size_t {aka unsigned long}'.
+[ArduCAM/examples/RaspberryPi/arducam_ov5640_4cams_capture.cpp:201]: (portability) %d in format string (no. 1) requires 'int' but the argument type is 'size_t {aka unsigned long}'.
+[ArduCAM/examples/RaspberryPi/arducam_ov5640_4cams_capture.cpp:202]: (portability) %d in format string (no. 1) requires 'int' but the argument type is 'size_t {aka unsigned long}'.
+[ArduCAM/examples/RaspberryPi/arducam_ov5640_4cams_capture.cpp:203]: (portability) %d in format string (no. 1) requires 'int' but the argument type is 'size_t {aka unsigned long}'.
+[ArduCAM/examples/RaspberryPi/arducam_ov5640_4cams_capture.cpp:89]: (style) The scope of the variable 'temp' can be reduced.
+[ArduCAM/examples/RaspberryPi/arducam_ov5640_4cams_capture.cpp:89]: (style) The scope of the variable 'temp_last' can be reduced.
+[ArduCAM/examples/RaspberryPi/arducam_ov5640_capture.cpp:111]: (portability) %d in format string (no. 1) requires 'int' but the argument type is 'size_t {aka unsigned long}'.
+[ArduCAM/examples/RaspberryPi/arducam_ov5640_capture.cpp:53]: (style) The scope of the variable 'temp' can be reduced.
+[ArduCAM/examples/RaspberryPi/arducam_ov5640_capture.cpp:53]: (style) The scope of the variable 'temp_last' can be reduced.
+[ArduCAM/examples/RaspberryPi/arducam_ov5642_4cams_capture.cpp:194]: (portability) %d in format string (no. 1) requires 'int' but the argument type is 'size_t {aka unsigned long}'.
+[ArduCAM/examples/RaspberryPi/arducam_ov5642_4cams_capture.cpp:195]: (portability) %d in format string (no. 1) requires 'int' but the argument type is 'size_t {aka unsigned long}'.
+[ArduCAM/examples/RaspberryPi/arducam_ov5642_4cams_capture.cpp:196]: (portability) %d in format string (no. 1) requires 'int' but the argument type is 'size_t {aka unsigned long}'.
+[ArduCAM/examples/RaspberryPi/arducam_ov5642_4cams_capture.cpp:197]: (portability) %d in format string (no. 1) requires 'int' but the argument type is 'size_t {aka unsigned long}'.
+[ArduCAM/examples/RaspberryPi/arducam_ov5642_4cams_capture.cpp:89]: (style) The scope of the variable 'temp' can be reduced.
+[ArduCAM/examples/RaspberryPi/arducam_ov5642_4cams_capture.cpp:89]: (style) The scope of the variable 'temp_last' can be reduced.
+[ArduCAM/examples/RaspberryPi/arducam_ov5642_capture.cpp:105]: (portability) %d in format string (no. 1) requires 'int' but the argument type is 'size_t {aka unsigned long}'.
+[ArduCAM/examples/RaspberryPi/arducam_ov5642_capture.cpp:53]: (style) The scope of the variable 'temp' can be reduced.
+[ArduCAM/examples/RaspberryPi/arducam_ov5642_capture.cpp:53]: (style) The scope of the variable 'temp_last' can be reduced.
+[ArduCAM_Touch/ArduCAM_Touch.cpp:46]: (warning) Member variable 'ArduCAM_Touch::x' is not initialized in the constructor.
+[ArduCAM_Touch/ArduCAM_Touch.cpp:46]: (warning) Member variable 'ArduCAM_Touch::y' is not initialized in the constructor.
+[ArduCAM_Touch/ArduCAM_Touch.cpp:46]: (warning) Member variable 'ArduCAM_Touch::sta' is not initialized in the constructor.
+[ArduCAM_Touch/ArduCAM_Touch.cpp:46]: (warning) Member variable 'ArduCAM_Touch::xfac' is not initialized in the constructor.
+[ArduCAM_Touch/ArduCAM_Touch.cpp:46]: (warning) Member variable 'ArduCAM_Touch::yfac' is not initialized in the constructor.
+[ArduCAM_Touch/ArduCAM_Touch.cpp:46]: (warning) Member variable 'ArduCAM_Touch::xoff' is not initialized in the constructor.
+[ArduCAM_Touch/ArduCAM_Touch.cpp:46]: (warning) Member variable 'ArduCAM_Touch::yoff' is not initialized in the constructor.
+[ArduCAM_Touch/ArduCAM_Touch.cpp:48]: (performance) Variable 'T_IRQ' is assigned in constructor body. Consider performing initialization in initialization list.
+[ArduCAM_Touch/ArduCAM_Touch.cpp:49]: (performance) Variable 'T_CS' is assigned in constructor body. Consider performing initialization in initialization list.
+[ArduCAM_Touch/ArduCAM_Touch.cpp:108] -> [ArduCAM_Touch/ArduCAM_Touch.h:63]: (style, inconclusive) Technically the member function 'ArduCAM_Touch::getX' can be const.
+[ArduCAM_Touch/ArduCAM_Touch.cpp:136] -> [ArduCAM_Touch/ArduCAM_Touch.h:64]: (style, inconclusive) Technically the member function 'ArduCAM_Touch::getY' can be const.
+[ArduCAM_Touch/ArduCAM_Touch.cpp:188] -> [ArduCAM_Touch/ArduCAM_Touch.h:89]: (performance, inconclusive) Technically the member function 'ArduCAM_Touch::TP_Write_Byte' can be static (but you may consider moving to unnamed namespace).
+[ArduCAM_Touch/ArduCAM_Touch.cpp:287] -> [ArduCAM_Touch/ArduCAM_Touch.h:96]: (performance, inconclusive) Technically the member function 'ArduCAM_Touch::Load_Drow_Dialog' can be static (but you may consider moving to unnamed namespace).
+[ArduCAM_Touch/ArduCAM_Touch.cpp:260] -> [ArduCAM_Touch/ArduCAM_Touch.h:97]: (performance, inconclusive) Technically the member function 'ArduCAM_Touch::TP_fillRect' can be static (but you may consider moving to unnamed namespace).
+[ArduCAM_Touch/ArduCAM_Touch.cpp:61] -> [ArduCAM_Touch/ArduCAM_Touch.h:113]: (performance, inconclusive) Technically the member function 'ArduCAM_Touch::touch_WriteData' can be static (but you may consider moving to unnamed namespace).
+[ArduCAM_Touch/ArduCAM_Touch.cpp:66] -> [ArduCAM_Touch/ArduCAM_Touch.h:114]: (performance, inconclusive) Technically the member function 'ArduCAM_Touch::touch_ReadData' can be static (but you may consider moving to unnamed namespace).
+[UTFT4ArduCAM_SPI/UTFT_SPI.cpp:769]: (style) The scope of the variable 'f' can be reduced.
+[UTFT4ArduCAM_SPI/UTFT_SPI.cpp:896]: (style) The scope of the variable 'tc' can be reduced.
+[UTFT4ArduCAM_SPI/UTFT_SPI.cpp:960]: (style) The scope of the variable 'col' can be reduced.
+[UTFT4ArduCAM_SPI/UTFT_SPI.cpp:961]: (style) The scope of the variable 'tx' can be reduced.
+[UTFT4ArduCAM_SPI/UTFT_SPI.cpp:961]: (style) The scope of the variable 'ty' can be reduced.
+[UTFT4ArduCAM_SPI/UTFT_SPI.cpp:961]: (style) The scope of the variable 'newx' can be reduced.
+[UTFT4ArduCAM_SPI/UTFT_SPI.cpp:961]: (style) The scope of the variable 'newy' can be reduced.
+[UTFT4ArduCAM_SPI/UTFT_SPI.cpp:67]: (warning, inconclusive) Member variable 'UTFT::disp_x_size' is not initialized in the constructor.
+[UTFT4ArduCAM_SPI/UTFT_SPI.cpp:67]: (warning, inconclusive) Member variable 'UTFT::disp_y_size' is not initialized in the constructor.
+[UTFT4ArduCAM_SPI/UTFT_SPI.cpp:67]: (warning, inconclusive) Member variable 'UTFT::P_RS' is not initialized in the constructor.
+[UTFT4ArduCAM_SPI/UTFT_SPI.cpp:67]: (warning, inconclusive) Member variable 'UTFT::P_WR' is not initialized in the constructor.
+[UTFT4ArduCAM_SPI/UTFT_SPI.cpp:67]: (warning, inconclusive) Member variable 'UTFT::P_CS' is not initialized in the constructor.
+[UTFT4ArduCAM_SPI/UTFT_SPI.cpp:67]: (warning, inconclusive) Member variable 'UTFT::P_RST' is not initialized in the constructor.
+[UTFT4ArduCAM_SPI/UTFT_SPI.cpp:67]: (warning, inconclusive) Member variable 'UTFT::P_SDA' is not initialized in the constructor.
+[UTFT4ArduCAM_SPI/UTFT_SPI.cpp:67]: (warning, inconclusive) Member variable 'UTFT::P_SCL' is not initialized in the constructor.
+[UTFT4ArduCAM_SPI/UTFT_SPI.cpp:67]: (warning, inconclusive) Member variable 'UTFT::P_ALE' is not initialized in the constructor.
+[UTFT4ArduCAM_SPI/UTFT_SPI.cpp:67]: (warning, inconclusive) Member variable 'UTFT::cfont' is not initialized in the constructor.
+[UTFT4ArduCAM_SPI/UTFT_SPI.cpp:71]: (warning) Member variable 'UTFT::P_RS' is not initialized in the constructor.
+[UTFT4ArduCAM_SPI/UTFT_SPI.cpp:71]: (warning) Member variable 'UTFT::P_WR' is not initialized in the constructor.
+[UTFT4ArduCAM_SPI/UTFT_SPI.cpp:71]: (warning) Member variable 'UTFT::P_RST' is not initialized in the constructor.
+[UTFT4ArduCAM_SPI/UTFT_SPI.cpp:71]: (warning) Member variable 'UTFT::P_SDA' is not initialized in the constructor.
+[UTFT4ArduCAM_SPI/UTFT_SPI.cpp:71]: (warning) Member variable 'UTFT::P_SCL' is not initialized in the constructor.
+[UTFT4ArduCAM_SPI/UTFT_SPI.cpp:71]: (warning) Member variable 'UTFT::P_ALE' is not initialized in the constructor.
+[UTFT4ArduCAM_SPI/UTFT_SPI.cpp:71]: (warning) Member variable 'UTFT::cfont' is not initialized in the constructor.
+[UTFT4ArduCAM_SPI/UTFT_SPI.cpp:883] -> [UTFT4ArduCAM_SPI/UTFT_SPI.h:244]: (style, inconclusive) Technically the member function 'UTFT::getFontXsize' can be const.
+[UTFT4ArduCAM_SPI/UTFT_SPI.cpp:888] -> [UTFT4ArduCAM_SPI/UTFT_SPI.h:245]: (style, inconclusive) Technically the member function 'UTFT::getFontYsize' can be const.
+[UTFT4ArduCAM_SPI/UTFT_SPI.cpp:999] -> [UTFT4ArduCAM_SPI/UTFT_SPI.h:248]: (style, inconclusive) Technically the member function 'UTFT::getDisplayXSize' can be const.
+[UTFT4ArduCAM_SPI/UTFT_SPI.cpp:1007] -> [UTFT4ArduCAM_SPI/UTFT_SPI.h:249]: (style, inconclusive) Technically the member function 'UTFT::getDisplayYSize' can be const.
+[UTFT4ArduCAM_SPI/UTFT_SPI.cpp:984] -> [UTFT4ArduCAM_SPI/UTFT_SPI.h:252]: (performance, inconclusive) Technically the member function 'UTFT::lcdOff' can be static (but you may consider moving to unnamed namespace).
+[UTFT4ArduCAM_SPI/UTFT_SPI.cpp:989] -> [UTFT4ArduCAM_SPI/UTFT_SPI.h:253]: (performance, inconclusive) Technically the member function 'UTFT::lcdOn' can be static (but you may consider moving to unnamed namespace).
+[UTFT4ArduCAM_SPI/UTFT_SPI.cpp:994] -> [UTFT4ArduCAM_SPI/UTFT_SPI.h:254]: (performance, inconclusive) Technically the member function 'UTFT::setContrast' can be static (but you may consider moving to unnamed namespace).
+[UTFT4ArduCAM_SPI/UTFT_SPI.cpp:1025] -> [UTFT4ArduCAM_SPI/UTFT_SPI.h:255]: (performance, inconclusive) Technically the member function 'UTFT::setBrightness' can be static (but you may consider moving to unnamed namespace).
+[UTFT4ArduCAM_SPI/UTFT_SPI.cpp:1030] -> [UTFT4ArduCAM_SPI/UTFT_SPI.h:256]: (performance, inconclusive) Technically the member function 'UTFT::setDisplayPage' can be static (but you may consider moving to unnamed namespace).
+[UTFT4ArduCAM_SPI/UTFT_SPI.cpp:1035] -> [UTFT4ArduCAM_SPI/UTFT_SPI.h:257]: (performance, inconclusive) Technically the member function 'UTFT::setWritePage' can be static (but you may consider moving to unnamed namespace).
+[UTFT4ArduCAM_SPI/UTFT_SPI.cpp:1015] -> [UTFT4ArduCAM_SPI/UTFT_SPI.h:293]: (performance, inconclusive) Technically the member function 'UTFT::_fast_fill_16' can be static (but you may consider moving to unnamed namespace).
+[UTFT4ArduCAM_SPI/UTFT_SPI.cpp:1020] -> [UTFT4ArduCAM_SPI/UTFT_SPI.h:294]: (performance, inconclusive) Technically the member function 'UTFT::_fast_fill_8' can be static (but you may consider moving to unnamed namespace).
+[UTFT4ArduCAM_SPI/UTFT_SPI.cpp:1040] -> [UTFT4ArduCAM_SPI/UTFT_SPI.h:295]: (performance, inconclusive) Technically the member function 'UTFT::_convert_float' can be static (but you may consider moving to unnamed namespace).
+[UTFT4ArduCAM_SPI/UTFT_SPI.h:219]: (style) Class 'UTFT' has a constructor with 1 argument that is not explicit.
+[UTFT4ArduCAM_SPI/UTFT_SPI.cpp:67]: (warning, inconclusive) Member variable 'UTFT::B_RS' is not initialized in the constructor.
+[UTFT4ArduCAM_SPI/UTFT_SPI.cpp:67]: (warning, inconclusive) Member variable 'UTFT::B_WR' is not initialized in the constructor.
+[UTFT4ArduCAM_SPI/UTFT_SPI.cpp:67]: (warning, inconclusive) Member variable 'UTFT::B_CS' is not initialized in the constructor.
+[UTFT4ArduCAM_SPI/UTFT_SPI.cpp:67]: (warning, inconclusive) Member variable 'UTFT::B_RST' is not initialized in the constructor.
+[UTFT4ArduCAM_SPI/UTFT_SPI.cpp:67]: (warning, inconclusive) Member variable 'UTFT::B_SDA' is not initialized in the constructor.
+[UTFT4ArduCAM_SPI/UTFT_SPI.cpp:67]: (warning, inconclusive) Member variable 'UTFT::B_SCL' is not initialized in the constructor.
+[UTFT4ArduCAM_SPI/UTFT_SPI.cpp:67]: (warning, inconclusive) Member variable 'UTFT::B_ALE' is not initialized in the constructor.
+[UTFT4ArduCAM_SPI/UTFT_SPI.cpp:71]: (warning) Member variable 'UTFT::B_RS' is not initialized in the constructor.
+[UTFT4ArduCAM_SPI/UTFT_SPI.cpp:71]: (warning) Member variable 'UTFT::B_WR' is not initialized in the constructor.
+[UTFT4ArduCAM_SPI/UTFT_SPI.cpp:71]: (warning) Member variable 'UTFT::B_RST' is not initialized in the constructor.
+[UTFT4ArduCAM_SPI/UTFT_SPI.cpp:71]: (warning) Member variable 'UTFT::B_SDA' is not initialized in the constructor.
+[UTFT4ArduCAM_SPI/UTFT_SPI.cpp:71]: (warning) Member variable 'UTFT::B_SCL' is not initialized in the constructor.
+[UTFT4ArduCAM_SPI/UTFT_SPI.cpp:71]: (warning) Member variable 'UTFT::B_ALE' is not initialized in the constructor.
+[UTFT4ArduCAM_SPI/UTFT_SPI.cpp:97] -> [UTFT4ArduCAM_SPI/UTFT_SPI.h:260]: (style, inconclusive) Technically the member function 'UTFT::bus_write' can be const.
+[UTFT4ArduCAM_SPI/UTFT_SPI.cpp:106] -> [UTFT4ArduCAM_SPI/UTFT_SPI.h:261]: (style, inconclusive) Technically the member function 'UTFT::bus_read' can be const.
+[ArduCAM_Touch/ArduCAM_Touch.cpp:296]: (style) The function 'Drow_menu' is never used.
+[UTFT4ArduCAM_SPI/UTFT_SPI.cpp:144]: (style) The function 'InitLCD' is never used.
+[ArduCAM_Touch/ArduCAM_Touch.cpp:53]: (style) The function 'InitTouch' is never used.
+[ArduCAM_Touch/ArduCAM_Touch.cpp:287]: (style) The function 'Load_Drow_Dialog' is never used.
+[ArduCAM/OV5640_MINI_5MP.cpp:546]: (style) The function 'SetAutoExposureControl' is never used.
+[ArduCAM/OV5640_MINI_5MP.cpp:513]: (style) The function 'SetBandingFilter' is never used.
+[ArduCAM/OV2640_MINI_2MP.cpp:161]: (style) The function 'SetBrightness' is never used.
+[ArduCAM/OV2640_MINI_2MP.cpp:113]: (style) The function 'SetColorSaturation' is never used.
+[ArduCAM/OV5642_MINI_5MP.cpp:698]: (style) The function 'SetCompression' is never used.
+[ArduCAM/OV2640_MINI_2MP.cpp:208]: (style) The function 'SetContrast' is never used.
+[ArduCAM/OV5642_MINI_5MP.cpp:559]: (style) The function 'SetExposureLevel' is never used.
+[ArduCAM/OV5642_MINI_5MP.cpp:297]: (style) The function 'SetHue' is never used.
+[ArduCAM/OV2640_MINI_2MP.cpp:32]: (style) The function 'SetImageSize' is never used.
+[ArduCAM/OV2640_MINI_2MP.cpp:69]: (style) The function 'SetLightMode' is never used.
+[ArduCAM/OV5642_MINI_5MP.cpp:654]: (style) The function 'SetMirrorFlip' is never used.
+[ArduCAM/OV5640_MINI_5MP.cpp:495]: (style) The function 'SetNightMode' is never used.
+[ArduCAM/OV5642_MINI_5MP.cpp:504]: (style) The function 'SetSharpness' is never used.
+[ArduCAM/OV2640_MINI_2MP.cpp:266]: (style) The function 'SetSpecialEffects' is never used.
+[ArduCAM/OV5642_MINI_5MP.cpp:714]: (style) The function 'SetTestPattern' is never used.
+[ArduCAM_Touch/ArduCAM_Touch.cpp:349]: (style) The function 'TP_Adjust' is never used.
+[ArduCAM_Touch/ArduCAM_Touch.cpp:279]: (style) The function 'TP_Draw_Big_Point' is never used.
+[ArduCAM/examples/RaspberryPi/arducam_arch_raspberrypi.c:33]: (style) The function 'arducam_i2c_init' is never used.
+[ArduCAM/examples/RaspberryPi/arducam_arch_raspberrypi.c:85]: (style) The function 'arducam_i2c_read' is never used.
+[ArduCAM/examples/RaspberryPi/arducam_arch_raspberrypi.c:106]: (style) The function 'arducam_i2c_read16' is never used.
+[ArduCAM/examples/RaspberryPi/arducam_arch_raspberrypi.c:132]: (style) The function 'arducam_i2c_word_read' is never used.
+[ArduCAM/examples/RaspberryPi/arducam_arch_raspberrypi.c:149]: (style) The function 'arducam_i2c_write_regs' is never used.
+[ArduCAM/examples/RaspberryPi/arducam_arch_raspberrypi.c:171]: (style) The function 'arducam_i2c_write_regs16' is never used.
+[ArduCAM/examples/RaspberryPi/arducam_arch_raspberrypi.c:192]: (style) The function 'arducam_i2c_write_word_regs' is never used.
+[ArduCAM/examples/RaspberryPi/arducam_arch_raspberrypi.c:52]: (style) The function 'arducam_spi_read' is never used.
+[ArduCAM/examples/RaspberryPi/arducam_arch_raspberrypi.c:67]: (style) The function 'arducam_spi_transfer' is never used.
+[ArduCAM/examples/RaspberryPi/arducam_arch_raspberrypi.c:62]: (style) The function 'arducam_spi_transfers' is never used.
+[ArduCAM/examples/RaspberryPi/arducam_arch_raspberrypi.c:43]: (style) The function 'arducam_spi_write' is never used.
+[ArduCAM/OV2640_MINI_2MP.cpp:337]: (style) The function 'checkModule' is never used.
+[ArduCAM/Camera.cpp:61]: (style) The function 'clear_bit' is never used.
+[UTFT4ArduCAM_SPI/UTFT_SPI.cpp:232]: (style) The function 'drawRect' is never used.
+[UTFT4ArduCAM_SPI/UTFT_SPI.cpp:249]: (style) The function 'drawRoundRect' is never used.
+[UTFT4ArduCAM_SPI/UTFT_SPI.cpp:384]: (style) The function 'fillCircle' is never used.
+[UTFT4ArduCAM_SPI/UTFT_SPI.cpp:301]: (style) The function 'fillRoundRect' is never used.
+[UTFT4ArduCAM_SPI/UTFT_SPI.cpp:488]: (style) The function 'getBackColor' is never used.
+[UTFT4ArduCAM_SPI/UTFT_SPI.cpp:464]: (style) The function 'getColor' is never used.
+[UTFT4ArduCAM_SPI/UTFT_SPI.cpp:999]: (style) The function 'getDisplayXSize' is never used.
+[UTFT4ArduCAM_SPI/UTFT_SPI.cpp:1007]: (style) The function 'getDisplayYSize' is never used.
+[UTFT4ArduCAM_SPI/UTFT_SPI.cpp:878]: (style) The function 'getFont' is never used.
+[UTFT4ArduCAM_SPI/UTFT_SPI.cpp:883]: (style) The function 'getFontXsize' is never used.
+[UTFT4ArduCAM_SPI/UTFT_SPI.cpp:888]: (style) The function 'getFontYsize' is never used.
+[ArduCAM_Touch/ArduCAM_Touch.cpp:108]: (style) The function 'getX' is never used.
+[ArduCAM_Touch/ArduCAM_Touch.cpp:136]: (style) The function 'getY' is never used.
+[ArduCAM/Camera.cpp:69]: (style) The function 'get_bit' is never used.
+[UTFT4ArduCAM_SPI/UTFT_SPI.cpp:984]: (style) The function 'lcdOff' is never used.
+[UTFT4ArduCAM_SPI/UTFT_SPI.cpp:989]: (style) The function 'lcdOn' is never used.
+[UTFT4ArduCAM_SPI/UTFT_SPI.cpp:827]: (style) The function 'printNumF' is never used.
+[ArduCAM/Camera.cpp:298]: (style) The function 'rdSensorReg16_16' is never used.
+[ArduCAM/Camera.cpp:235]: (style) The function 'rdSensorReg8_16' is never used.
+[ArduCAM/Camera.cpp:34]: (style) The function 'read_fifo' is never used.
+[UTFT4ArduCAM_SPI/UTFT_SPI.cpp:227]: (style) The function 'resetXY' is never used.
+[UTFT4ArduCAM_SPI/UTFT_SPI.cpp:469]: (style) The function 'setBackColor' is never used.
+[UTFT4ArduCAM_SPI/UTFT_SPI.cpp:1025]: (style) The function 'setBrightness' is never used.
+[UTFT4ArduCAM_SPI/UTFT_SPI.cpp:994]: (style) The function 'setContrast' is never used.
+[UTFT4ArduCAM_SPI/UTFT_SPI.cpp:1030]: (style) The function 'setDisplayPage' is never used.
+[ArduCAM_Touch/ArduCAM_Touch.cpp:164]: (style) The function 'setPrecision' is never used.
+[UTFT4ArduCAM_SPI/UTFT_SPI.cpp:1035]: (style) The function 'setWritePage' is never used.
+[ArduCAM/Camera.cpp:54]: (style) The function 'set_bit' is never used.
+[ArduCAM/Camera.cpp:81]: (style) The function 'set_mode' is never used.
+[ArduCAM/Camera.cpp:176]: (style) The function 'wrSensorRegs16_16' is never used.
+[ArduCAM/Camera.cpp:136]: (style) The function 'wrSensorRegs8_16' is never used.
+(information) Cppcheck cannot find all the include files (use --check-config for details)
